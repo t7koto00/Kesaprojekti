@@ -229,7 +229,11 @@ Light:
   serializedVersion: 9
   m_Type: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Color: {r: 1, g: 1, b: 1, a: 0.007843138}
+=======
+  m_Color: {r: 0.05660379, g: 0.054734796, b: 0.054734796, a: 0.007843138}
+>>>>>>> parent of aa432ea... Leveli versio 1
 =======
   m_Color: {r: 0.05660379, g: 0.054734796, b: 0.054734796, a: 0.007843138}
 >>>>>>> parent of aa432ea... Leveli versio 1
