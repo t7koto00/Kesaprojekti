@@ -24,8 +24,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
-        m_Texture: {fileID: 2800000, guid: 5c2dde1bd29326641b56ec5cae06b4cb, type: 3}
-        m_Scale: {x: 0.3, y: 0.3}
+        m_Texture: {fileID: 2800000, guid: 6e012f28b99d5504e8a1e43e8ec30b79, type: 3}
+        m_Scale: {x: 0.2, y: 0.15}
         m_Offset: {x: 0, y: 0}
     - _DetailMask:
         m_Texture: {fileID: 0}
@@ -73,5 +73,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.7533375, g: 0.763468, b: 0.764151, a: 1}
+    - _Color: {r: 0.7075472, g: 0.70395297, b: 0.69085974, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
