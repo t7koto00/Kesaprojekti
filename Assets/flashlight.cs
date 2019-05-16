@@ -5,6 +5,8 @@ using UnityEngine;
 public class flashlight : MonoBehaviour
 {
     private Light lt;
+    AudioSource audioData;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +16,11 @@ public class flashlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             lt.enabled = !lt.enabled;
+            audioData = GetComponent<AudioSource>();
+            audioData.Play(0);
         }
     }
 }

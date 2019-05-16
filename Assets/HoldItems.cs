@@ -64,7 +64,7 @@ public class HoldItems : MonoBehaviour
         cube.GetComponent<Rigidbody>().useGravity = true;
         cube = null;
         guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
-
+        cube = guide.GetChild(0).gameObject;
         guide.GetChild(0).parent = null;
         canHold = true;
     }
