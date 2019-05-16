@@ -217,7 +217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -719,8 +719,8 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 20
-  m_SpotAngle: 100
-  m_InnerSpotAngle: 21.80208
+  m_SpotAngle: 80
+  m_InnerSpotAngle: 8
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -766,6 +766,18 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1869917168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869917162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f7ffeb152391443b7ff76a71b122f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2016167126
 GameObject:
   m_ObjectHideFlags: 0
