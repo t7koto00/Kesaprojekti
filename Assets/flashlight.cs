@@ -11,6 +11,11 @@ public class flashlight : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+        {
+            // exit from update if this is not the local player
+            return;
+        }
         lt = GetComponent<Light>();
     }
 
@@ -19,7 +24,7 @@ public class flashlight : NetworkBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (!isLocalPlayer)
+            if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
             {
                 // exit from update if this is not the local player
                 return;

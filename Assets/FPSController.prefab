@@ -338,6 +338,8 @@ GameObject:
   - component: {fileID: 7495288342247233236}
   - component: {fileID: 7495288342247233238}
   - component: {fileID: 7495288342247233239}
+  - component: {fileID: 7628060722298195822}
+  - component: {fileID: 5926733612967545166}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -602,3 +604,33 @@ MonoBehaviour:
   canHold: 1
   cube: {fileID: 0}
   guide: {fileID: 7495288343283939535}
+--- !u!114 &7628060722298195822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495288343284360431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serverOnly: 0
+  localPlayerAuthority: 1
+  m_AssetId: 4f9a72b77bc62054c8177189011536a9
+  m_SceneId: 0
+--- !u!114 &5926733612967545166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495288343284360431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncInterval: 0.1
+  compressRotation: 1
