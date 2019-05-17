@@ -427,6 +427,8 @@ GameObject:
   - component: {fileID: 728223398}
   - component: {fileID: 728223397}
   - component: {fileID: 728223401}
+  - component: {fileID: 728223403}
+  - component: {fileID: 728223402}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -522,6 +524,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &728223402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728223396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncInterval: 0.1
+  compressRotation: 1
+--- !u!114 &728223403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728223396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serverOnly: 1
+  localPlayerAuthority: 0
+  m_AssetId: 
+  m_SceneId: 2879959223
 --- !u!1 &1835328846
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,7 +663,7 @@ MonoBehaviour:
   onlineScene: 
   transport: {fileID: 1835328848}
   networkAddress: localhost
-  maxConnections: 2
+  maxConnections: 3
   playerPrefab: {fileID: 7495288343284360429, guid: 4f9a72b77bc62054c8177189011536a9,
     type: 3}
   autoCreatePlayer: 1

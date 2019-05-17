@@ -7,6 +7,7 @@ public class flashlight : NetworkBehaviour
 {
     private Light lt;
     AudioSource audioData;
+    AudioListener audioListener;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,8 @@ public class flashlight : NetworkBehaviour
         if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
         {
             // exit from update if this is not the local player
+            audioListener = GetComponent<AudioListener>();
+            audioListener.enabled = false;
             return;
         }
         lt = GetComponent<Light>();
