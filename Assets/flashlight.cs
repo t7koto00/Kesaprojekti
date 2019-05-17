@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
-public class flashlight : NetworkBehaviour
+public class flashlight : MonoBehaviour
 {
     private Light lt;
     AudioSource audioData;
     AudioListener audioListener;
+    NetworkIdentity networkIdentity;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+        networkIdentity = GetComponentInParent<NetworkIdentity>();
+        if (!networkIdentity.isLocalPlayer)
         {
             // exit from update if this is not the local player
             audioListener = GetComponent<AudioListener>();
@@ -27,7 +29,7 @@ public class flashlight : NetworkBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (!gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+            if (!networkIdentity.isLocalPlayer)
             {
                 // exit from update if this is not the local player
                 return;
