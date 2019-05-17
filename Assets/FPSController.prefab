@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncInterval: 0.1
   m_IsWalking: 0
   m_WalkSpeed: 5
   m_RunSpeed: 10
@@ -305,8 +306,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   localPlayerAuthority: 1
-  m_AssetId: 
-  m_SceneId: 2225672921
+  m_AssetId: 4f9a72b77bc62054c8177189011536a9
+  m_SceneId: 0
 --- !u!114 &875042476338698433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,7 +461,7 @@ Light:
       e33: 1
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
+  m_DrawHalo: 1
   m_Flare: {fileID: 0}
   m_RenderMode: 1
   m_CullingMask:

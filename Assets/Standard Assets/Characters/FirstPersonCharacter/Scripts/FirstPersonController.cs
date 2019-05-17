@@ -70,6 +70,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (!isLocalPlayer)
             {
                 // exit from update if this is not the local player
+                GetComponentInChildren<Camera>().enabled = false;
                 return;
             }
             RotateView();
@@ -258,6 +259,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+            if (!isLocalPlayer)
+            {
+                // exit from update if this is not the local player
+                return;
+            }
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:
@@ -281,6 +287,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (!isLocalPlayer)
             {
                 // exit from update if this is not the local player
+
                 return;
             }
             m_MouseLook.LookRotation (transform, m_Camera.transform);
