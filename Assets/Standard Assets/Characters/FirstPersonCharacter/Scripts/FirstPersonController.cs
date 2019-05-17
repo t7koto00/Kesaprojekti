@@ -62,6 +62,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
         }
+        public override void OnStartLocalPlayer()
+        {
+            m_CharacterController = GetComponent<CharacterController>();
+            m_Camera = Camera.main;
+            m_OriginalCameraPosition = m_Camera.transform.localPosition;
+            m_FovKick.Setup(m_Camera);
+            m_HeadBob.Setup(m_Camera, m_StepInterval);
+            m_StepCycle = 0f;
+            m_NextStep = m_StepCycle / 2f;
+            m_Jumping = false;
+            m_AudioSource = GetComponent<AudioSource>();
+            m_MouseLook.Init(transform, m_Camera.transform);
+        }
 
 
         // Update is called once per frame
