@@ -3,12 +3,13 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using Mirror;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
     [RequireComponent(typeof (AudioSource))]
-    public class FirstPersonController : MonoBehaviour
+    public class FirstPersonController : NetworkBehaviour
     {
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
@@ -45,6 +46,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Use this for initialization
         private void Start()
         {
+            if (!isLocalPlayer)
+            {
+                // exit from update if this is not the local player
+                return;
+            }
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -61,6 +67,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
+            if (!isLocalPlayer)
+            {
+                // exit from update if this is not the local player
+                return;
+            }
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
@@ -86,6 +97,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayLandingSound()
         {
+            if (!isLocalPlayer)
+            {
+                // exit from update if this is not the local player
+                return;
+            }
             m_AudioSource.clip = m_LandSound;
             m_AudioSource.Play();
             m_NextStep = m_StepCycle + .5f;
@@ -94,6 +110,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
+            if (!isLocalPlayer)
+            {
+                // exit from update if this is not the local player
+                return;
+            }
             float speed;
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
@@ -136,6 +157,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayJumpSound()
         {
+            if (!isLocalPlayer)
+            {
+                // exit from update if this is not the local player
+                return;
+            }
             m_AudioSource.clip = m_JumpSound;
             m_AudioSource.Play();
         }
@@ -143,6 +169,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void ProgressStepCycle(float speed)
         {
+            if (!isLocalPlayer)
+            {
+                // exit from update if this is not the local player
+                return;
+            }
             if (m_CharacterController.velocity.sqrMagnitude > 0 && (m_Input.x != 0 || m_Input.y != 0))
             {
                 m_StepCycle += (m_CharacterController.velocity.magnitude + (speed*(m_IsWalking ? 1f : m_RunstepLenghten)))*
@@ -162,6 +193,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayFootStepAudio()
         {
+            if (!isLocalPlayer)
+            {
+                // exit from update if this is not the local player
+                return;
+            }
             if (!m_CharacterController.isGrounded)
             {
                 return;
@@ -179,6 +215,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void UpdateCameraPosition(float speed)
         {
+            if (!isLocalPlayer)
+            {
+                // exit from update if this is not the local player
+                return;
+            }
             Vector3 newCameraPosition;
             if (!m_UseHeadBob)
             {
@@ -203,6 +244,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void GetInput(out float speed)
         {
+            
             // Read input
             float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
@@ -236,12 +278,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
+            if (!isLocalPlayer)
+            {
+                // exit from update if this is not the local player
+                return;
+            }
             m_MouseLook.LookRotation (transform, m_Camera.transform);
         }
 
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
+            
             Rigidbody body = hit.collider.attachedRigidbody;
             //dont move the rigidbody if the character is on top of it
             if (m_CollisionFlags == CollisionFlags.Below)
