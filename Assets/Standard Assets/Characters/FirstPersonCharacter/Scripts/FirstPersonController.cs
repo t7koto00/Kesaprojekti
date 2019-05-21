@@ -113,7 +113,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     if (playing != true)
                     {
                         audioSource.clip = outOfBreath;
-                        Debug.Log("REEEE");
                         audioSource.Play();
                         playing = true;
                     }
@@ -132,7 +131,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     stamina = stamina + 1;
                 }
             }
-            //Debug.Log(stamina);
+            Debug.Log(stamina);
             // get a normal for the surface that is being touched to move along it
             RaycastHit hitInfo;
             Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
