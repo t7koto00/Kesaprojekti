@@ -41,10 +41,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        private AudioSource audioSource;
         public int stamina;
         private int staminaStart;
         public AudioClip outOfBreath;
-        private bool playing;
+        private bool playing = false;
 
         // Use this for initialization
         private void Start()
@@ -57,7 +58,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_StepCycle = 0f;
             m_NextStep = m_StepCycle/2f;
             m_Jumping = false;
-            m_AudioSource = GetComponent<AudioSource>();
+            AudioSource[] audios = GetComponents<AudioSource>();
+            m_AudioSource = audios[0];
+            audioSource = audios[1];
 			m_MouseLook.Init(transform , m_Camera.transform);
             staminaStart = stamina - 1;
         }
@@ -109,14 +112,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     stamina = 0;
                     if (playing != true)
                     {
-                        m_AudioSource.clip = outOfBreath;
-                        m_AudioSource.Play();
+                        audioSource.clip = outOfBreath;
+                        Debug.Log("REEEE");
+                        audioSource.Play();
                         playing = true;
                     }
                 }
                 else
                 {
-                    //playing = false; 
+                    if (!audioSource.isPlaying)
+                    { playing = false; }
+                    
                     stamina = stamina - 1;
                 }
             } else if (!Input.GetKey(KeyCode.LeftShift))
@@ -126,7 +132,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     stamina = stamina + 1;
                 }
             }
-            Debug.Log(stamina);
+            //Debug.Log(stamina);
             // get a normal for the surface that is being touched to move along it
             RaycastHit hitInfo;
             Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
