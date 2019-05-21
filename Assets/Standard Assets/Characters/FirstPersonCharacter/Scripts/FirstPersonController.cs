@@ -41,6 +41,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        public int stamina;
+        private int staminaStart;
+        public AudioClip outOfBreath;
+        private bool playing;
 
         // Use this for initialization
         private void Start()
@@ -55,6 +59,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            staminaStart = stamina - 1;
         }
 
 
@@ -98,7 +103,30 @@ namespace UnityStandardAssets.Characters.FirstPerson
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
             Vector3 desiredMove = transform.forward*m_Input.y + transform.right*m_Input.x;
-
+            if(Input.GetKey(KeyCode.LeftShift) && m_MoveDir.x != desiredMove.x * speed && m_MoveDir.z != desiredMove.z * speed) {
+                if (stamina <= 0)
+                {
+                    stamina = 0;
+                    if (playing != true)
+                    {
+                        m_AudioSource.clip = outOfBreath;
+                        m_AudioSource.Play();
+                        playing = true;
+                    }
+                }
+                else
+                {
+                    //playing = false; 
+                    stamina = stamina - 1;
+                }
+            } else if (!Input.GetKey(KeyCode.LeftShift))
+            {
+                if (stamina <= staminaStart)
+                {
+                    stamina = stamina + 1;
+                }
+            }
+            Debug.Log(stamina);
             // get a normal for the surface that is being touched to move along it
             RaycastHit hitInfo;
             Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
@@ -215,7 +243,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
 #endif
             // set the desired speed to be walking or running
-            speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+            if (stamina == 0)
+            {
+                speed = m_WalkSpeed;
+            }
+            else
+            {
+                speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+            }
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:
