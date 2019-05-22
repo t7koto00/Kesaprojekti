@@ -42,8 +42,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
         private AudioSource audioSource;
-        public int stamina;
-        private int staminaStart;
+        public double stamina;
+        private double staminaStart;
         public AudioClip outOfBreath;
         private bool playing = false;
 
@@ -62,7 +62,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = audios[0];
             audioSource = audios[1];
 			m_MouseLook.Init(transform , m_Camera.transform);
-            staminaStart = stamina - 1;
+            staminaStart = stamina - 0.5;
         }
 
 
@@ -128,7 +128,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 if (stamina <= staminaStart)
                 {
-                    stamina = stamina + 1;
+                    stamina = stamina + 0.5;
                 }
             }
             Debug.Log(stamina);
