@@ -889,7 +889,7 @@ GameObject:
   - component: {fileID: 885004324}
   - component: {fileID: 885004323}
   m_Layer: 0
-  m_Name: Arch
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1446,7 +1446,7 @@ GameObject:
   - component: {fileID: 1075080890}
   - component: {fileID: 1075080889}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2349,7 +2349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &2016167127
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2437,7 +2437,7 @@ GameObject:
   - component: {fileID: 2083766214}
   - component: {fileID: 2083766213}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
