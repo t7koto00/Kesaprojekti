@@ -21,7 +21,8 @@ public class TopDownController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         cam = GetComponentInChildren<Camera>();
         staminaStart = stamina - 0.5;
-        audioSource = GetComponent<AudioSource>();
+        AudioSource[] audios = GetComponents<AudioSource>();
+        audioSource = audios[0];
     }
     
     void Update()
@@ -49,10 +50,11 @@ public class TopDownController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            rigidBody.velocity = movement * sprintSpeed;
+            
             if (stamina <= 0)
             {
                 stamina = 0;
+                rigidBody.velocity = movement * speed;
                 if (playing != true)
                 {
                     audioSource.clip = outOfBreath;
@@ -64,7 +66,7 @@ public class TopDownController : MonoBehaviour
             {
                 if (!audioSource.isPlaying)
                 { playing = false; }
-
+                rigidBody.velocity = movement * sprintSpeed;
                 stamina = stamina - 1;
             }
         }
