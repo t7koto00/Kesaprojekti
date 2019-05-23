@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TopDownController : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class TopDownController : MonoBehaviour
     public AudioClip[] walkingSound;
     private double m_StepCycle;
     private double m_NextStep;
+    public Slider staminaSlider; 
 
 
 
@@ -63,6 +65,7 @@ public class TopDownController : MonoBehaviour
             if (stamina <= 0)
             {
                 stamina = 0;
+                staminaSlider.value = (float)stamina;
                 ProgressStepCycle(speed);
                 rigidBody.velocity = movement * speed;
                 
@@ -80,6 +83,7 @@ public class TopDownController : MonoBehaviour
                 ProgressStepCycle(sprintSpeed);
                 rigidBody.velocity = movement * sprintSpeed;
                 stamina = stamina - 1;
+                staminaSlider.value = (float)stamina;
             }
         }
         else
@@ -91,6 +95,7 @@ public class TopDownController : MonoBehaviour
             if (stamina <= staminaStart)
             {
                 stamina = stamina + 0.5;
+                staminaSlider.value = (float)stamina;
             }
         }
         Debug.Log(stamina);
