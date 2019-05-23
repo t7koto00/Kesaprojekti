@@ -13,7 +13,13 @@ public class TopDownController : MonoBehaviour
     Vector3 lookPos;
     bool playing = false;
     AudioSource audioSource;
+    AudioSource walkingAudio;
     public AudioClip outOfBreath;
+    Vector3 movement;
+    public AudioClip[] walkingSound;
+    private double m_StepCycle;
+    private double m_NextStep;
+
 
 
     void Start()
@@ -23,6 +29,9 @@ public class TopDownController : MonoBehaviour
         staminaStart = stamina - 0.5;
         AudioSource[] audios = GetComponents<AudioSource>();
         audioSource = audios[0];
+        walkingAudio = audios[2];
+        m_StepCycle = 0f;
+        m_NextStep = m_StepCycle / 2f;
     }
     
     void Update()
@@ -46,7 +55,7 @@ public class TopDownController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(horizontal, 0, vertical);
+        movement = new Vector3(horizontal, 0, vertical);
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -54,7 +63,9 @@ public class TopDownController : MonoBehaviour
             if (stamina <= 0)
             {
                 stamina = 0;
+                ProgressStepCycle(speed);
                 rigidBody.velocity = movement * speed;
+                
                 if (playing != true)
                 {
                     audioSource.clip = outOfBreath;
@@ -66,6 +77,7 @@ public class TopDownController : MonoBehaviour
             {
                 if (!audioSource.isPlaying)
                 { playing = false; }
+                ProgressStepCycle(sprintSpeed);
                 rigidBody.velocity = movement * sprintSpeed;
                 stamina = stamina - 1;
             }
@@ -73,12 +85,48 @@ public class TopDownController : MonoBehaviour
         else
         {
             rigidBody.velocity = movement * speed;
+            ProgressStepCycle(speed);
+
+
             if (stamina <= staminaStart)
             {
                 stamina = stamina + 0.5;
             }
         }
         Debug.Log(stamina);
+        
 
+
+    }
+
+    private void ProgressStepCycle(float speed)
+    {
+        if (rigidBody.velocity.sqrMagnitude > 0 && ( Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0))
+        {
+            bool m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+            m_StepCycle += (rigidBody.velocity.magnitude + (speed * (m_IsWalking ? 1f : 0.7))) *
+                         Time.fixedDeltaTime;
+        }
+
+        if (!(m_StepCycle > m_NextStep))
+        {
+            return;
+        }
+
+        m_NextStep = m_StepCycle + 5;
+
+        PlayFootStepAudio();
+    }
+    private void PlayFootStepAudio()
+    {
+       
+        // pick & play a random footstep sound from the array,
+        // excluding sound at index 0
+        int n = Random.Range(1, walkingSound.Length);
+        walkingAudio.clip = walkingSound[n];
+        walkingAudio.PlayOneShot(walkingAudio.clip);
+        // move picked sound to index 0 so it's not picked next time
+        walkingSound[n] = walkingSound[0];
+        walkingSound[0] = walkingAudio.clip;
     }
 }
