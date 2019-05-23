@@ -13,7 +13,11 @@ public class TopDownController : MonoBehaviour
     Vector3 lookPos;
     bool playing = false;
     AudioSource audioSource;
+    AudioSource walkingAudio;
     public AudioClip outOfBreath;
+    Vector3 movement;
+    public AudioClip walkingSound;
+
 
 
     void Start()
@@ -23,6 +27,8 @@ public class TopDownController : MonoBehaviour
         staminaStart = stamina - 0.5;
         AudioSource[] audios = GetComponents<AudioSource>();
         audioSource = audios[0];
+        walkingAudio = audios[2];
+       
     }
     
     void Update()
@@ -46,7 +52,7 @@ public class TopDownController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(horizontal, 0, vertical);
+        movement = new Vector3(horizontal, 0, vertical);
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -79,6 +85,9 @@ public class TopDownController : MonoBehaviour
             }
         }
         Debug.Log(stamina);
-
+       
+       
     }
+
+ 
 }
