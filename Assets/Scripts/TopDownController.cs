@@ -98,10 +98,7 @@ public class TopDownController : MonoBehaviour
                 staminaSlider.value = (float)stamina;
             }
         }
-        Debug.Log(stamina);
-        
-
-
+      
     }
 
     private void ProgressStepCycle(float speed)
