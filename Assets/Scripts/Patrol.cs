@@ -8,34 +8,46 @@ public class Patrol : MonoBehaviour
     public Transform player;
     public float speed;
     private int current;
-    Light light;
+    Light guardLight;
     
     void Start()
     {
-        light = GetComponent<Light>();
+        guardLight = GetComponent<Light>();
     }
     void Update()
     {
         InFront();
         HaveLineOfSight();
-        if(InFront() && HaveLineOfSight())
+        if (InFront() && HaveLineOfSight())
         {
-            light.color = Color.red;
+            guardLight.color = Color.red;
+            Vector3 pos = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            GetComponent<Rigidbody>().MovePosition(pos);
+
+            Vector3 lookDir = pos - transform.position;
+            lookDir.y = 0;
+
+            transform.LookAt(transform.position + lookDir, Vector3.up);
         }
-        else { light.color = Color.white; }
-        //else
-        //{
+        else
+        {
+            guardLight.color = Color.white;
+
             if (transform.position != target[current].position)
             {
                 Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, speed * Time.deltaTime);
                 GetComponent<Rigidbody>().MovePosition(pos);
+                Vector3 lookDir = pos - transform.position;
+                lookDir.y = 0;
+
+                transform.LookAt(transform.position + lookDir, Vector3.up);
             }
             else
             {
                 current = (current + 1) % target.Length;
-                transform.Rotate(0, 90, 0);
+                //transform.Rotate(0, 90, 0);
             }
-        //}
+        }
        
     }
 
@@ -65,5 +77,14 @@ public class Patrol : MonoBehaviour
             }
         }
         return false;
+    }
+
+        void OnCollisionEnter(Collision col)
+    {
+        if (col.collider.tag == "Player")
+        {
+            Application.Quit();
+            Debug.Log("REEEEE");
+        }
     }
 }
