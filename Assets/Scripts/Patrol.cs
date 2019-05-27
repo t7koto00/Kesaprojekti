@@ -9,10 +9,13 @@ public class Patrol : MonoBehaviour
     public float speed;
     private int current;
     Light guardLight;
+    AudioSource audioSource;
+    public AudioClip caught;
     
     void Start()
     {
         guardLight = GetComponent<Light>();
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -83,6 +86,8 @@ public class Patrol : MonoBehaviour
     {
         if (col.collider.tag == "Player")
         {
+            audioSource.clip = caught;
+            audioSource.Play();
             Debug.Log("Collision with player");
         }
     }
