@@ -83,8 +83,7 @@ public class Patrol : MonoBehaviour
     {
         if (col.collider.tag == "Player")
         {
-            Application.Quit();
-            Debug.Log("REEEEE");
+            Debug.Log("Collision with player");
         }
     }
 }
