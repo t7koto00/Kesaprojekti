@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Patrol : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class Patrol : MonoBehaviour
     public float speed;
     private int current;
     Light guardLight;
+    NavMeshAgent agent;
     
     void Start()
     {
         guardLight = GetComponent<Light>();
+        agent = GetComponent<NavMeshAgent>();
     }
     void Update()
     {
@@ -22,7 +25,8 @@ public class Patrol : MonoBehaviour
         {
             guardLight.color = Color.red;
             Vector3 pos = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            GetComponent<Rigidbody>().MovePosition(pos);
+            //GetComponent<Rigidbody>().MovePosition(pos);
+            agent.SetDestination(player.position);
 
             Vector3 lookDir = pos - transform.position;
             lookDir.y = 0;
@@ -33,14 +37,11 @@ public class Patrol : MonoBehaviour
         {
             guardLight.color = Color.white;
 
-            if (transform.position != target[current].position)
+            if (transform.position.x != target[current].position.x && transform.position.z != target[current].position.z)
             {
                 Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, speed * Time.deltaTime);
-                GetComponent<Rigidbody>().MovePosition(pos);
-                Vector3 lookDir = pos - transform.position;
-                lookDir.y = 0;
-
-                transform.LookAt(transform.position + lookDir, Vector3.up);
+                //GetComponent<Rigidbody>().MovePosition(pos);
+                agent.SetDestination(target[current].position);
             }
             else
             {
