@@ -16,7 +16,7 @@ public class Patrol : MonoBehaviour
     
     void Start()
     {
-        guardLight = GetComponent<Light>();
+        guardLight = GetComponentInChildren<Light>();
         agent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
     }
