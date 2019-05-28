@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 435076893648763731}
   - component: {fileID: 435076893648763729}
   - component: {fileID: 435076893648763728}
+  - component: {fileID: 1252798723}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -272,7 +273,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435076894484384104}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4520881099b63f409b47433030a4b03, type: 3}
   m_Name: 
@@ -281,6 +282,33 @@ MonoBehaviour:
   canHold: 1
   cube: {fileID: 0}
   guide: {fileID: 435076894484813128}
+--- !u!114 &1252798723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435076894484384104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa5a0ac0cb4a84d41a66bfd90a87491a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brush:
+    splatTexture: {fileID: 0}
+    splatsX: 1
+    splatsY: 1
+    splatIndex: -1
+    splatScale: 1
+    splatRandomScaleMin: 1
+    splatRandomScaleMax: 1
+    splatRotation: 0
+    splatRandomRotation: 180
+    splatChannel: 0
+  RandomChannel: 0
+  SingleShotClick: 0
+  ClearOnClick: 0
+  IndexBrush: 0
 --- !u!1 &435076894484384106
 GameObject:
   m_ObjectHideFlags: 0
