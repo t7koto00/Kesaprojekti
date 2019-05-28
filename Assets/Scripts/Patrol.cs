@@ -11,11 +11,14 @@ public class Patrol : MonoBehaviour
     private int current;
     Light guardLight;
     NavMeshAgent agent;
+    AudioSource audioSource;
+    public AudioClip caught;
     
     void Start()
     {
         guardLight = GetComponent<Light>();
         agent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -84,6 +87,8 @@ public class Patrol : MonoBehaviour
     {
         if (col.collider.tag == "Player")
         {
+            audioSource.clip = caught;
+            audioSource.Play();
             Debug.Log("Collision with player");
         }
     }
