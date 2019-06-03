@@ -20,7 +20,9 @@ public class TopDownController : MonoBehaviour
     public AudioClip[] walkingSound;
     private double m_StepCycle;
     private double m_NextStep;
-    public Slider staminaSlider; 
+    public Slider staminaSlider;
+    public Camera mainCamera;
+    public GameObject fpCamera;
 
 
 
@@ -34,10 +36,21 @@ public class TopDownController : MonoBehaviour
         walkingAudio = audios[2];
         m_StepCycle = 0f;
         m_NextStep = m_StepCycle / 2f;
+        mainCamera.enabled = true;
+        fpCamera.SetActive(false);
     }
     
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            mainCamera.enabled = !mainCamera.enabled;
+            fpCamera.SetActive(!fpCamera.activeSelf);
+
+        }
+        
+
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit hit;
@@ -50,11 +63,19 @@ public class TopDownController : MonoBehaviour
         Vector3 lookDir = lookPos - transform.position;
         lookDir.y = 0;
 
-        transform.LookAt(transform.position + lookDir, Vector3.up);
+        if (mainCamera.enabled == true)
+        {
+            transform.LookAt(transform.position + lookDir, Vector3.up);
+        }
     }
 
     void FixedUpdate()
     {
+        if(mainCamera.enabled == false)
+        {
+            return;
+        }
+
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         movement = new Vector3(horizontal, 0, vertical);

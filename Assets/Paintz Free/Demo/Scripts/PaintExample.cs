@@ -41,7 +41,7 @@ public class PaintExample : MonoBehaviour
 
     private void Update()
     {
-        CameraControl();
+        //CameraControl();
 
         if (Input.GetKeyDown(KeyCode.Alpha1)) brush.splatChannel = 0;
         if (Input.GetKeyDown(KeyCode.Alpha2)) brush.splatChannel = 1;
