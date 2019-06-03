@@ -73,6 +73,11 @@ public class TopDownController : MonoBehaviour
     {
         if(mainCamera.enabled == false)
         {
+            if (stamina <= staminaStart)
+            {
+                stamina = stamina + 0.5;
+                staminaSlider.value = (float)stamina;
+            }
             return;
         }
 
