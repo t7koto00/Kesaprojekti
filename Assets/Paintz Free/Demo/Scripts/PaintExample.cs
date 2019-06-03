@@ -24,7 +24,7 @@ public class PaintExample : MonoBehaviour
 
     //private Vector3 rotatePoint = Vector3.zero;
 
-    private bool Help = false;
+    //private bool Help = false;
 
     private void Start()
     {
@@ -76,7 +76,7 @@ public class PaintExample : MonoBehaviour
 
 
     private Texture2D colorTex;
-    private bool ShowMenu = true;
+    //private bool ShowMenu = true;
 
    /* private void OnGUI()
     {
