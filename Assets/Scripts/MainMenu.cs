@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
 
     public void ExitGame()

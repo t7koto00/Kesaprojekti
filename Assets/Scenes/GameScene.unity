@@ -539,7 +539,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23860
+  m_Name: pb_Mesh94408
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3416,7 +3416,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23658
+  m_Name: pb_Mesh94206
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24184,9 +24184,17 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_IsSelectable: 1
-  m_SelectedFaces: 
-  m_SelectedEdges: []
-  m_SelectedVertices: 
+  m_SelectedFaces: f4010000
+  m_SelectedEdges:
+  - a: 1998
+    b: 1999
+  - a: 2000
+    b: 1998
+  - a: 1999
+    b: 2001
+  - a: 2001
+    b: 2000
+  m_SelectedVertices: ce070000cf070000d0070000d1070000
 --- !u!23 &2083766215
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24491,16 +24499,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 435076894484384104, guid: e1f32ca4102eb024f8597c30dfb9c591,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 435076894484384104, guid: e1f32ca4102eb024f8597c30dfb9c591,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 435076894484813130, guid: e1f32ca4102eb024f8597c30dfb9c591,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24561,6 +24559,16 @@ PrefabInstance:
       propertyPath: cube
       value: 
       objectReference: {fileID: 728223396}
+    - target: {fileID: 435076894484384104, guid: e1f32ca4102eb024f8597c30dfb9c591,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435076894484384104, guid: e1f32ca4102eb024f8597c30dfb9c591,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1f32ca4102eb024f8597c30dfb9c591, type: 3}
 --- !u!1001 &2785012755390326341
@@ -24707,6 +24715,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895686251430274357, guid: 12eafba2476cabc4d93b867bc0395514,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686251430274355, guid: 12eafba2476cabc4d93b867bc0395514,
         type: 3}
