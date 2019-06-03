@@ -87,9 +87,23 @@ public class Patrol : MonoBehaviour
     {
         if (col.collider.tag == "Player")
         {
-            audioSource.clip = caught;
-            audioSource.Play();
-            Debug.Log("Collision with player");
+            if (InFront() && HaveLineOfSight())
+            {
+                audioSource.clip = caught;
+                audioSource.Play();
+                Debug.Log("Collision with player");
+            }
+            else
+            {
+                Debug.Log("Collision with hidden player");
+                /*Vector3 pos = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+              
+                Vector3 lookDir = pos - transform.position;
+                lookDir.y = 0;
+
+                transform.LookAt(transform.position + lookDir, Vector3.up);*/
+
+            }
         }
     }
 }
