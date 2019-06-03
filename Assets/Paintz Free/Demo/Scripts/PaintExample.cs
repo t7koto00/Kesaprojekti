@@ -3,6 +3,8 @@
 public class PaintExample : MonoBehaviour
 {
     public Brush brush;
+    AudioSource audioSource;
+    public AudioClip sprayAudio;
     public bool RandomChannel = false;
     public bool SingleShotClick = false;
     public bool ClearOnClick = false;
@@ -27,6 +29,7 @@ public class PaintExample : MonoBehaviour
     private void Start()
     {
         colorTex = new Texture2D(1, 1);
+        audioSource = GetComponent<AudioSource>();
 
         rotationX = transform.eulerAngles.y;
         rotationY = -transform.eulerAngles.x;
@@ -58,10 +61,16 @@ public class PaintExample : MonoBehaviour
                 if (IndexBrush) brush.splatIndex++;
             }
             HoldingButtonDown = true;
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = sprayAudio;
+                audioSource.Play();
+            }
         }
         else
         {
             HoldingButtonDown = false;
+            audioSource.Stop();
         }
     }
 
