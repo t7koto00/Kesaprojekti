@@ -34,6 +34,8 @@ public class PaintExample : MonoBehaviour
         rotationX = transform.eulerAngles.y;
         rotationY = -transform.eulerAngles.x;
 
+        
+
         if (brush.splatTexture == null)
         {
             brush.splatTexture = Resources.Load<Texture2D>("splats");
@@ -49,6 +51,15 @@ public class PaintExample : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) brush.splatChannel = 0;
         if (Input.GetKeyDown(KeyCode.Alpha2)) brush.splatChannel = 1;
         if (Input.GetKeyDown(KeyCode.Alpha5)) brush.splatChannel = 4;
+        brush.splatScale = brush.splatScale + Input.GetAxis("Mouse ScrollWheel")*2;
+        if( brush.splatScale <= 0)
+        {
+            brush.splatScale = (float) 0.01;
+        }
+        else if(brush.splatScale > 2)
+        {
+            brush.splatScale = 2;
+        }
 
         if (RandomChannel) brush.splatChannel = Random.Range(0, 2);
 
