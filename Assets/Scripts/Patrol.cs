@@ -7,7 +7,6 @@ public class Patrol : MonoBehaviour
 {
     public Transform[] target;
     public Transform player;
-    public float speed;
     private int current;
     Light guardLight;
     NavMeshAgent agent;
@@ -27,8 +26,7 @@ public class Patrol : MonoBehaviour
         if (InFront() && HaveLineOfSight())
         {
             guardLight.color = Color.red;
-            Vector3 pos = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            //GetComponent<Rigidbody>().MovePosition(pos);
+            Vector3 pos = Vector3.MoveTowards(transform.position, player.position, 5 * Time.deltaTime);
             agent.SetDestination(player.position);
 
             Vector3 lookDir = pos - transform.position;
@@ -39,17 +37,14 @@ public class Patrol : MonoBehaviour
         else
         {
             guardLight.color = Color.white;
-
-            if (transform.position.x != target[current].position.x && transform.position.z != target[current].position.z)
+            
+            if ((transform.position - target[current].position).sqrMagnitude > 1 * 1)
             {
-                Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, speed * Time.deltaTime);
-                //GetComponent<Rigidbody>().MovePosition(pos);
                 agent.SetDestination(target[current].position);
             }
             else
             {
                 current = (current + 1) % target.Length;
-                //transform.Rotate(0, 90, 0);
             }
         }
        
