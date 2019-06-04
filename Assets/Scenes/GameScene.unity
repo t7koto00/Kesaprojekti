@@ -4047,6 +4047,30 @@ MonoBehaviour:
   PaintAllSplats: 0
   debugTexture: 0
   splatTexPick: {fileID: 0}
+--- !u!1 &2058729245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3895686251430274364, guid: 12eafba2476cabc4d93b867bc0395514,
+    type: 3}
+  m_PrefabInstance: {fileID: 3895686250628936443}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2058729254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058729245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ed8ad4fc591514692edfe1dbb12e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paintTextureSize: 256
+  renderTextureSize: 256
+  SetupOnStart: 0
+  PaintAllSplats: 0
+  debugTexture: 0
+  splatTexPick: {fileID: 0}
 --- !u!1 &2083766212
 GameObject:
   m_ObjectHideFlags: 0
@@ -24184,17 +24208,9 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_IsSelectable: 1
-  m_SelectedFaces: f4010000
-  m_SelectedEdges:
-  - a: 1998
-    b: 1999
-  - a: 2000
-    b: 1998
-  - a: 1999
-    b: 2001
-  - a: 2001
-    b: 2000
-  m_SelectedVertices: ce070000cf070000d0070000d1070000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!23 &2083766215
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24746,5 +24762,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 482873468}
+    - target: {fileID: 3895686251430274359, guid: 12eafba2476cabc4d93b867bc0395514,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 561f1ab3f2ad50e41b7567aeb8ae7e14, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12eafba2476cabc4d93b867bc0395514, type: 3}
