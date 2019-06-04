@@ -97,8 +97,6 @@ public class Patrol : MonoBehaviour
                 lookDir.y = 0;
 
                 transform.LookAt(transform.position + lookDir, Vector3.up);*/
-                //toni on tyhäm 
-
             }
         }
     }
