@@ -24829,6 +24829,10 @@ PrefabInstance:
       propertyPath: brush.splatScale
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 720476131, guid: f902dc2b51a23a84c87974440a1c3928, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f902dc2b51a23a84c87974440a1c3928, type: 3}
 --- !u!1001 &3895686250628936443
@@ -24933,5 +24937,9 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 561f1ab3f2ad50e41b7567aeb8ae7e14, type: 2}
+    - target: {fileID: 1891230375, guid: 12eafba2476cabc4d93b867bc0395514, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12eafba2476cabc4d93b867bc0395514, type: 3}
