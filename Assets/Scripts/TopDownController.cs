@@ -66,16 +66,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 GameObject.Find("FPCamera").GetComponent<PaintExample>().enabled = false;
                 GameObject.Find("FPCamera").GetComponent<AudioSource>().enabled = false;
                 m_MouseLook.SetCursorLock(false);
+                Cursor.visible = true;
                 crosshair.enabled = false;
             }
             else if(FpsCamera.enabled == true)
             {
                 GameObject.Find("FPCamera").GetComponent<PaintExample>().enabled = true;
                 GameObject.Find("FPCamera").GetComponent<AudioSource>().enabled = true;
-                m_MouseLook.SetCursorLock(true);
+                //m_MouseLook.SetCursorLock(true);
+                Cursor.visible = false;
                 crosshair.enabled = true;
             }
-
 
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
