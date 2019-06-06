@@ -7,8 +7,7 @@ public class Trap : MonoBehaviour
 {
 
     public GameObject guard;
-    bool timerStarted = false;
-    public float secondsTrappedFor = 3.0f;
+    public float targetTime = 3.0f;
 
     void Start()
     {

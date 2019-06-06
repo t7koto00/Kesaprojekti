@@ -38,6 +38,8 @@ public class TopDownController : MonoBehaviour
         m_NextStep = m_StepCycle / 2f;
         mainCamera.enabled = true;
         fpCamera.SetActive(false);
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 40;
     }
     
     void Update()
