@@ -23,6 +23,7 @@ public class TopDownController : MonoBehaviour
     public Slider staminaSlider;
     public Camera mainCamera;
     public GameObject fpCamera;
+    public GameObject trapPrefab;
 
 
 
@@ -68,6 +69,11 @@ public class TopDownController : MonoBehaviour
         if (mainCamera.enabled == true)
         {
             transform.LookAt(transform.position + lookDir, Vector3.up);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Instantiate(trapPrefab, transform.position + (transform.forward * 2), transform.rotation);
         }
     }
 
@@ -126,7 +132,10 @@ public class TopDownController : MonoBehaviour
                 staminaSlider.value = (float)stamina;
             }
         }
-      
+
+        
+
+
     }
 
     private void ProgressStepCycle(float speed)
