@@ -28,6 +28,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public GameObject fpCamera;
         Camera FpsCamera;
         [SerializeField] private MouseLook m_MouseLook;
+        public GameObject trapPrefab;
 
 
         void Start()
@@ -96,7 +97,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 RotateView();
             }
-        }
+        
 
         if (Input.GetKeyDown(KeyCode.E))
         {
