@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 namespace UnityStandardAssets.Characters.FirstPerson
 {
-   
+
     public class TopDownController : MonoBehaviour
     {
         Rigidbody rigidBody;
@@ -55,9 +55,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 mainCamera.enabled = !mainCamera.enabled;
                 FpsCamera.enabled = !FpsCamera.enabled;
-              
+
                 m_MouseLook.Init(transform, fpCamera.transform);
-            
+
             }
 
             if(mainCamera.enabled == true)
@@ -97,6 +97,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 RotateView();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Instantiate(trapPrefab, transform.position + (transform.forward * 2), transform.rotation);
+        }
+    }
 
         void FixedUpdate()
         {
@@ -191,6 +197,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_MouseLook.LookRotation(transform, FpsCamera.transform);
         }
-        
+
     }
 }

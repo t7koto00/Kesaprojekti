@@ -7,11 +7,11 @@ public class Trap : MonoBehaviour
 {
 
     public GameObject guard;
-    public float targetTime = 3.0f;
+    public float secondsTrappedFor = 3.0f;
 
     void Start()
     {
-        
+        guard = GameObject.Find("Guard");
     }
    
     void Update()
@@ -20,9 +20,9 @@ public class Trap : MonoBehaviour
         {
             guard.GetComponent<NavMeshAgent>().isStopped = true;
 
-            targetTime -= Time.deltaTime;
+            secondsTrappedFor -= Time.deltaTime;
 
-            if (targetTime <= 0.0f)
+            if (secondsTrappedFor <= 0.0f)
             {
                 gameObject.SetActive(false);
                 guard.GetComponent<NavMeshAgent>().isStopped = false;
