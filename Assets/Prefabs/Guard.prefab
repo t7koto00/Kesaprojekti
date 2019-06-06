@@ -222,7 +222,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   player: {fileID: 0}
-  speed: 5
   caught: {fileID: 8300000, guid: 2a1c3c39e7dbcc04586bbc82986f8383, type: 3}
 --- !u!82 &3895686251430274356
 AudioSource:

@@ -28,5 +28,9 @@ public class Trap : MonoBehaviour
                 guard.GetComponent<NavMeshAgent>().isStopped = false;
             }
         }
+        else
+        {
+            guard.GetComponent<NavMeshAgent>().isStopped = false;
+        }
     }
 }

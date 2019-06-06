@@ -93,7 +93,7 @@ MonoBehaviour:
     splatsX: 1
     splatsY: 1
     splatIndex: -1
-    splatScale: 1
+    splatScale: 0.2
     splatRandomScaleMin: 1
     splatRandomScaleMax: 1
     splatRotation: 0
@@ -337,8 +337,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   staminaSlider: {fileID: 0}
+  crosshair: {fileID: 0}
   mainCamera: {fileID: 2785012754741110817}
   fpCamera: {fileID: 720476131}
+  m_MouseLook:
+    XSensitivity: 2
+    YSensitivity: 2
+    clampVerticalRotation: 1
+    MinimumX: -90
+    MaximumX: 90
+    smooth: 0
+    smoothTime: 5
+    lockCursor: 1
 --- !u!114 &2785012754315774205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,7 +675,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2785012754621571377}
   m_LocalRotation: {x: -0.049171392, y: 0.07406627, z: 0.7053951, w: 0.70321697}
-  m_LocalPosition: {x: 0.02299881, y: -0.721, z: -0.039001465}
+  m_LocalPosition: {x: 0, y: -0.721, z: -0.039001465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2785012754315774195}
