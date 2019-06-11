@@ -12,6 +12,7 @@ public class Patrol : MonoBehaviour
     NavMeshAgent agent;
     AudioSource audioSource;
     public AudioClip caught;
+    public AudioClip spotted;
     
     void Start()
     {
@@ -32,12 +33,17 @@ public class Patrol : MonoBehaviour
 
             Vector3 lookDir = pos - transform.position;
             lookDir.y = 0;
+            if (!audioSource.isPlaying) { 
+            audioSource.clip = spotted;
+            audioSource.Play();
+            }
 
             transform.LookAt(transform.position + lookDir, Vector3.up);
         }
         else
         {
             guardLight.color = Color.white;
+            audioSource.Stop();
             
             if ((transform.position - target[current].position).sqrMagnitude > 1 * 1)
             {
