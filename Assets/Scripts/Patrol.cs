@@ -88,6 +88,7 @@ public class Patrol : MonoBehaviour
                 audioSource.clip = caught;
                 audioSource.Play();
                 Debug.Log("Collision with player");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
             }
             else
             {
