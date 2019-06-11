@@ -25,7 +25,8 @@ public class Patrol : MonoBehaviour
         HaveLineOfSight();
         if (InFront() && HaveLineOfSight())
         {
-            guardLight.color = Color.red;
+            float t = Mathf.PingPong(Time.time, 0.7f) / 0.7f;
+            guardLight.color = Color.Lerp(Color.red, Color.blue, t);
             Vector3 pos = Vector3.MoveTowards(transform.position, player.position, 5 * Time.deltaTime);
             agent.SetDestination(player.position);
 
