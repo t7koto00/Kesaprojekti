@@ -74,7 +74,7 @@ public class PaintTarget : MonoBehaviour
             return Color.black;
         }
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));// Camera.main.ScreenPointToRay(Input.mousePosition);
         return RayColor(ray);
     }
 
@@ -86,7 +86,7 @@ public class PaintTarget : MonoBehaviour
             return -1;
         }
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));// Camera.main.ScreenPointToRay(Input.mousePosition);
         return RayChannel(ray);
     }
 
@@ -188,7 +188,7 @@ public class PaintTarget : MonoBehaviour
             return;
         }
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));// Camera.main.ScreenPointToRay(Input.mousePosition);
         PaintRaycast(ray, brush);
     }
 
