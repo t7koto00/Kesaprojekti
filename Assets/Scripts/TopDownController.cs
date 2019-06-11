@@ -61,23 +61,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             }
 
-            if(mainCamera.enabled == true)
-            {
-                GameObject.Find("FPCamera").GetComponent<PaintExample>().enabled = false;
-                GameObject.Find("FPCamera").GetComponent<AudioSource>().enabled = false;
-                m_MouseLook.SetCursorLock(false);
-                Cursor.visible = true;
-                crosshair.enabled = false;
-            }
-            else if(FpsCamera.enabled == true)
-            {
-                GameObject.Find("FPCamera").GetComponent<PaintExample>().enabled = true;
-                GameObject.Find("FPCamera").GetComponent<AudioSource>().enabled = true;
-                //m_MouseLook.SetCursorLock(true);
-                Cursor.visible = false;
-                crosshair.enabled = true;
-            }
-
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
             RaycastHit hit;
@@ -92,6 +75,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if (mainCamera.enabled == true)
             {
+                GameObject.Find("FPCamera").GetComponent<PaintExample>().enabled = false;
+                GameObject.Find("FPCamera").GetComponent<AudioSource>().enabled = false;
+                m_MouseLook.SetCursorLock(false);
+                Cursor.visible = true;
+                crosshair.enabled = false;
                 transform.LookAt(transform.position + lookDir, Vector3.up);
             }
             else if(FpsCamera.enabled == true)
@@ -197,6 +185,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
+            GameObject.Find("FPCamera").GetComponent<PaintExample>().enabled = true;
+            GameObject.Find("FPCamera").GetComponent<AudioSource>().enabled = true;
+            //m_MouseLook.SetCursorLock(true);
+            Cursor.visible = false;
+            crosshair.enabled = true;
             m_MouseLook.LookRotation(transform, FpsCamera.transform);
         }
 

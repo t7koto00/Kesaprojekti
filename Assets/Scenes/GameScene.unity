@@ -539,7 +539,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26808
+  m_Name: pb_Mesh127792
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3405,7 +3405,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh88356
+  m_Name: pb_Mesh127538
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25358,14 +25358,14 @@ PrefabInstance:
       propertyPath: brush.splatScale
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 720476131, guid: f902dc2b51a23a84c87974440a1c3928, type: 3}
-      propertyPath: m_TagString
-      value: MainCamera
-      objectReference: {fileID: 0}
     - target: {fileID: 2785012754621571376, guid: f902dc2b51a23a84c87974440a1c3928,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 720476131, guid: f902dc2b51a23a84c87974440a1c3928, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f902dc2b51a23a84c87974440a1c3928, type: 3}
