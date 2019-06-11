@@ -51,7 +51,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         void Update()
         {
-
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 mainCamera.enabled = !mainCamera.enabled;
@@ -76,7 +75,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 crosshair.enabled = true;
             }
 
-
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
             RaycastHit hit;
@@ -98,11 +96,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 RotateView();
             }
         
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Instantiate(trapPrefab, transform.position + (transform.forward * 2), transform.rotation);
-        }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (GameObject.Find("Trap(Clone)") == false)
+                { 
+                    Instantiate(trapPrefab, transform.position + (transform.forward * 2), transform.rotation);
+                }
+                else
+                {
+                    Destroy(GameObject.Find("Trap(Clone)"), 0);
+                    Instantiate(trapPrefab, transform.position + (transform.forward * 2), transform.rotation);
+                }
+            }
     }
 
         void FixedUpdate()

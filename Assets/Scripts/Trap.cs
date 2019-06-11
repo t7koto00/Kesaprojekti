@@ -20,11 +20,12 @@ public class Trap : MonoBehaviour
         {
             guard.GetComponent<NavMeshAgent>().isStopped = true;
 
+
             secondsTrappedFor -= Time.deltaTime;
 
             if (secondsTrappedFor <= 0.0f)
             {
-                gameObject.SetActive(false);
+                Destroy(gameObject, 0);
                 guard.GetComponent<NavMeshAgent>().isStopped = false;
             }
         }
