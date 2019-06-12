@@ -56,10 +56,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 test = true;
             }
-            else
+            /*else
             {
                 test = false;
-            }
+            }*/
             
 
             if (Input.GetKeyDown(KeyCode.Q))
@@ -157,6 +157,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             else
             {
+                test = false;
                 rigidBody.velocity = movement * speed;
                 ProgressStepCycle(speed);
 
