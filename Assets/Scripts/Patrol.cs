@@ -15,6 +15,7 @@ public class Patrol : MonoBehaviour
     public AudioClip caught;
     public AudioClip spotted;
     private static bool test1;
+    private static bool playerSpotted;
     
     void Start()
     {
@@ -29,6 +30,7 @@ public class Patrol : MonoBehaviour
         HaveLineOfSight();
         if (InFront() && HaveLineOfSight()  || test1 == true)
         {
+            playerSpotted = true;
             float t = Mathf.PingPong(Time.time, 0.7f) / 0.7f;
             guardLight.color = Color.Lerp(Color.red, Color.blue, t);
             Vector3 pos = Vector3.MoveTowards(transform.position, player.transform.position, 5 * Time.deltaTime);
@@ -47,7 +49,7 @@ public class Patrol : MonoBehaviour
         {
             guardLight.color = Color.white;
             audioSource.Stop();
-            
+            playerSpotted = false;
             if ((transform.position - target[current].position).sqrMagnitude > 1 * 1)
             {
                 agent.SetDestination(target[current].position);
@@ -92,7 +94,7 @@ public class Patrol : MonoBehaviour
     {
         if (col.collider.tag == "Player")
         {
-            if (InFront() && HaveLineOfSight() || test1 == true)
+            if (playerSpotted == true || test1 == true)
             {
                 //audioSource.clip = caught;
                 //audioSource.Play();
