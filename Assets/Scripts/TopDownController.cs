@@ -61,7 +61,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 mainCamera.enabled = !mainCamera.enabled;
                 FpsCamera.enabled = !FpsCamera.enabled;
-
+                test = false;
                 m_MouseLook.Init(transform, fpCamera.transform);
 
             }
@@ -149,6 +149,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     stamina = stamina - 1;
                     staminaSlider.value = (float)stamina;
                 }
+                else if (!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.W) || !Input.GetKey(KeyCode.S) || !Input.GetKey(KeyCode.D))
+                { test = false; }
             }
             else
             {

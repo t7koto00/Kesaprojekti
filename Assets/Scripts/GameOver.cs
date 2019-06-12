@@ -12,6 +12,7 @@ public class GameOver : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = caught;
         audioSource.Play();
+        Cursor.visible = true;
     }
     public void TryAgain()
     {

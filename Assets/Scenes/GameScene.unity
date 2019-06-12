@@ -1007,6 +1007,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: c0f26bf3d6dd06e4a855ca3f617ceb66, type: 3}
+--- !u!208 &331943170
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331943164}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.0530001, y: 1.6810001, z: 0.51600003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.13000001, y: 1.6800001, z: -0.075}
+  m_TimeToStationary: 0.5
 --- !u!1 &340065022 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 169058, guid: 1e90e95b47816f541b663890e3c2118b,
@@ -1051,6 +1067,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: c0f26bf3d6dd06e4a855ca3f617ceb66, type: 3}
+--- !u!208 &340065028
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340065022}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.0530001, y: 1.6810001, z: 0.51600003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.13000001, y: 1.6800001, z: -0.075}
+  m_TimeToStationary: 0.5
 --- !u!1 &401314714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,6 +1277,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: f7a2a5f57e7e1f94aa268e91b2e37573, type: 3}
+--- !u!208 &467569528
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467569522}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.0500001, y: 1.6800001, z: 0.513}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.127, y: 1.6790001, z: -0.072000004}
+  m_TimeToStationary: 0.5
 --- !u!4 &482873468 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2785012754315774195, guid: f902dc2b51a23a84c87974440a1c3928,
@@ -1905,6 +1953,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: f7a2a5f57e7e1f94aa268e91b2e37573, type: 3}
+--- !u!208 &816821802
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816821796}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.0500001, y: 1.6800001, z: 0.513}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.127, y: 1.6790001, z: -0.072000004}
+  m_TimeToStationary: 0.5
 --- !u!1 &819515482
 GameObject:
   m_ObjectHideFlags: 0
@@ -2685,15 +2749,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 490578, guid: e9a952fff0d5ee546bceadcd5743474e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.875765
+      value: -2.9757652
       objectReference: {fileID: 0}
     - target: {fileID: 490578, guid: e9a952fff0d5ee546bceadcd5743474e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.043609
+      value: -7.0436087
       objectReference: {fileID: 0}
     - target: {fileID: 490578, guid: e9a952fff0d5ee546bceadcd5743474e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.34806
+      value: 15.348061
       objectReference: {fileID: 0}
     - target: {fileID: 490578, guid: e9a952fff0d5ee546bceadcd5743474e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3303,6 +3367,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: f7a2a5f57e7e1f94aa268e91b2e37573, type: 3}
+--- !u!208 &1232958634
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232958628}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.0500001, y: 1.6800001, z: 0.513}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.127, y: 1.6790001, z: -0.072000004}
+  m_TimeToStationary: 0.5
 --- !u!1 &1391162255
 GameObject:
   m_ObjectHideFlags: 0
@@ -3537,7 +3617,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35356
+  m_Name: pb_Mesh140702
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3855,6 +3935,22 @@ MonoBehaviour:
   PaintAllSplats: 0
   debugTexture: 0
   splatTexPick: {fileID: 0}
+--- !u!208 &1519605789
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519605784}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.0530001, y: 1.6810001, z: 0.51600003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.13000001, y: 1.6800001, z: -0.075}
+  m_TimeToStationary: 0.5
 --- !u!64 &1519605790
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4453,6 +4549,22 @@ MonoBehaviour:
   PaintAllSplats: 0
   debugTexture: 0
   splatTexPick: {fileID: 0}
+--- !u!208 &1855711499
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855711493}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.0500001, y: 1.6800001, z: 0.513}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.127, y: 1.6790001, z: -0.072000004}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1877223609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4805,7 +4917,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh58252
+  m_Name: pb_Mesh140942
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
