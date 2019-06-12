@@ -29,6 +29,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         Camera FpsCamera;
         [SerializeField] private MouseLook m_MouseLook;
         public GameObject trapPrefab;
+        public static bool test = false;
 
 
         void Start()
@@ -51,6 +52,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         void Update()
         {
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                test = true;
+            }
+            else
+            {
+                test = false;
+            }
+            
+
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 mainCamera.enabled = !mainCamera.enabled;
@@ -135,6 +146,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
                 else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
                 {
+                    test = true;
                     if (!audioSource.isPlaying)
                     { playing = false; }
                     ProgressStepCycle(sprintSpeed);

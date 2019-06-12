@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Patrol : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Patrol : MonoBehaviour
     AudioSource audioSource;
     public AudioClip caught;
     public AudioClip spotted;
+    private static bool test1;
     
     void Start()
     {
@@ -22,9 +24,10 @@ public class Patrol : MonoBehaviour
     }
     void Update()
     {
+        test1 = TopDownController.test;
         InFront();
         HaveLineOfSight();
-        if (InFront() && HaveLineOfSight())
+        if (InFront() && HaveLineOfSight()  || test1 == true)
         {
             float t = Mathf.PingPong(Time.time, 0.7f) / 0.7f;
             guardLight.color = Color.Lerp(Color.red, Color.blue, t);
