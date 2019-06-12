@@ -92,7 +92,7 @@ public class Patrol : MonoBehaviour
     {
         if (col.collider.tag == "Player")
         {
-            if (InFront() && HaveLineOfSight())
+            if (InFront() && HaveLineOfSight() || test1 == true)
             {
                 //audioSource.clip = caught;
                 //audioSource.Play();

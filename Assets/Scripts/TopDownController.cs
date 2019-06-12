@@ -56,12 +56,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 test = true;
             }
-            /*else
-            {
-                test = false;
-            }*/
             
-
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 mainCamera.enabled = !mainCamera.enabled;
