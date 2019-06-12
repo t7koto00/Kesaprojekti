@@ -20,7 +20,7 @@ public class Patrol : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
     }
-    void Update()
+    void FixedUpdate()
     {
         InFront();
         HaveLineOfSight();
@@ -28,9 +28,9 @@ public class Patrol : MonoBehaviour
         {
             float t = Mathf.PingPong(Time.time, 0.7f) / 0.7f;
             guardLight.color = Color.Lerp(Color.red, Color.blue, t);
-            Vector3 pos = Vector3.MoveTowards(transform.position, player.position, 5 * Time.deltaTime);
-            agent.SetDestination(player.position);
-
+            Vector3 pos = Vector3.MoveTowards(transform.position, player.transform.position, 5 * Time.deltaTime);
+            agent.SetDestination(player.transform.position);
+            
             Vector3 lookDir = pos - transform.position;
             lookDir.y = 0;
             if (!audioSource.isPlaying) { 
@@ -60,12 +60,12 @@ public class Patrol : MonoBehaviour
     bool InFront()
     {
 
-        Vector3 directiontoplayer = transform.position - player.position;
+        Vector3 directiontoplayer = transform.position - player.transform.position;
+        directiontoplayer.y = 0;
         float angle = Vector3.Angle(transform.forward, directiontoplayer);
 
         if (Mathf.Abs(angle) > 135 && Mathf.Abs(angle) < 225)
         {
-           
             return true;
         }
         return false;
@@ -74,7 +74,7 @@ public class Patrol : MonoBehaviour
     bool HaveLineOfSight()
     {
         RaycastHit hit;
-        Vector3 direction = player.position - transform.position;
+        Vector3 direction = player.transform.position - transform.position;
 
         if(Physics.Raycast(transform.position, direction, out hit, 10))
         {
