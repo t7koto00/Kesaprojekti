@@ -46,7 +46,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             FpsCamera = fpCamera.GetComponentInChildren<Camera>();
             FpsCamera.enabled = false;
             QualitySettings.vSyncCount = 0;
-            Application.targetFrameRate = 40;
+            //Application.targetFrameRate = 40;
             m_MouseLook.Init(transform, fpCamera.transform);
         }
 
