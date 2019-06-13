@@ -65,17 +65,28 @@ public class PaintExample : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            if (!SingleShotClick || (SingleShotClick && !HoldingButtonDown))
+            //ray rangea varten
+            Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 7)) //viimeinen arvo maalauksen range
             {
-                if (ClearOnClick) PaintTarget.ClearAllPaint();
-                PaintTarget.PaintCursor(brush);
-                if (IndexBrush) brush.splatIndex++;
+                if (!SingleShotClick || (SingleShotClick && !HoldingButtonDown))
+                {
+                    if (ClearOnClick) PaintTarget.ClearAllPaint();
+                    PaintTarget.PaintCursor(brush);
+                    if (IndexBrush) brush.splatIndex++;
+                }
+                HoldingButtonDown = true;
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.clip = sprayAudio;
+                    audioSource.Play();
+                }
             }
-            HoldingButtonDown = true;
-            if (!audioSource.isPlaying)
+            else
             {
-                audioSource.clip = sprayAudio;
-                audioSource.Play();
+                audioSource.Stop();
             }
         }
         else

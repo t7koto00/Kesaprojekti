@@ -30,6 +30,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private MouseLook m_MouseLook;
         public GameObject trapPrefab;
         public int trapsUsed;
+        public static bool test = false;
 
 
         void Start()
@@ -46,17 +47,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
             FpsCamera = fpCamera.GetComponentInChildren<Camera>();
             FpsCamera.enabled = false;
             QualitySettings.vSyncCount = 0;
-            Application.targetFrameRate = 40;
+            //Application.targetFrameRate = 40;
             m_MouseLook.Init(transform, fpCamera.transform);
         }
 
         void Update()
         {
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                test = true;
+            }
+            
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 mainCamera.enabled = !mainCamera.enabled;
                 FpsCamera.enabled = !FpsCamera.enabled;
-
+                test = false;
                 m_MouseLook.Init(transform, fpCamera.transform);
 
             }
@@ -140,6 +146,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
                 else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
                 {
+                    test = true;
                     if (!audioSource.isPlaying)
                     { playing = false; }
                     ProgressStepCycle(sprintSpeed);
@@ -147,9 +154,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     stamina = stamina - 1;
                     staminaSlider.value = (float)stamina;
                 }
+                else if (!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.W) || !Input.GetKey(KeyCode.S) || !Input.GetKey(KeyCode.D))
+                { test = false; }
             }
             else
             {
+                test = false;
                 rigidBody.velocity = movement * speed;
                 ProgressStepCycle(speed);
 
