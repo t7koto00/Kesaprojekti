@@ -25,10 +25,11 @@ public class Patrol : MonoBehaviour
     }
     void FixedUpdate()
     {
+        float distance = Vector3.Distance(player.position, transform.position);
         test1 = TopDownController.test;
         InFront();
         HaveLineOfSight();
-        if (InFront() && HaveLineOfSight()  || test1 == true)
+        if (InFront() && HaveLineOfSight()  || test1 == true && distance <= 40)
         {
             playerSpotted = true;
             float t = Mathf.PingPong(Time.time, 0.7f) / 0.7f;
