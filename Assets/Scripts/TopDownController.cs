@@ -29,6 +29,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         Camera FpsCamera;
         [SerializeField] private MouseLook m_MouseLook;
         public GameObject trapPrefab;
+        public int trapsUsed;
 
 
         void Start()
@@ -88,15 +89,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
         
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (GameObject.Find("Trap(Clone)") == false)
-                { 
-                    Instantiate(trapPrefab, transform.position + (transform.forward * 2), transform.rotation);
-                }
-                else
+                if (trapsUsed < 3)
                 {
-                    Destroy(GameObject.Find("Trap(Clone)"), 0);
-                    Instantiate(trapPrefab, transform.position + (transform.forward * 2), transform.rotation);
+                    if (GameObject.Find("Trap(Clone)") == false)
+                    {
+                        Instantiate(trapPrefab, transform.position + (transform.forward * 2), transform.rotation);
+                    }
+                    else
+                    {
+                        Destroy(GameObject.Find("Trap(Clone)"), 0);
+                        Instantiate(trapPrefab, transform.position + (transform.forward * 2), transform.rotation);
+                    }
                 }
+                else { Debug.Log("No traps left"); }
             }
     }
 

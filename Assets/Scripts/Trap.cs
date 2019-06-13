@@ -25,6 +25,7 @@ public class Trap : MonoBehaviour
 
             if (secondsTrappedFor <= 0.0f)
             {
+                GameObject.Find("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.TopDownController>().trapsUsed++;
                 Destroy(gameObject, 0);
                 guard.GetComponent<NavMeshAgent>().isStopped = false;
             }
