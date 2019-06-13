@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public enum PaintDebug
 {
@@ -63,6 +64,7 @@ public class PaintTarget : MonoBehaviour
     private static RenderTexture RT256;
     private static RenderTexture RT4;
     private static Texture2D Tex4;
+    private int maxScore = 0;
 
     private static GameObject splatObject;
 
@@ -248,7 +250,14 @@ public class PaintTarget : MonoBehaviour
         newPaint.channelMask = brush.getMask();
         newPaint.scaleBias = brush.getTile();
         newPaint.brush = brush;
-
+       
+        if (target.maxScore < 1000)
+        {
+            TopDownController.score = TopDownController.score + 10;
+            target.maxScore = target.maxScore + 10;
+            Debug.Log(TopDownController.score);
+        }
+       
         target.PaintSplat(newPaint);
     }
 

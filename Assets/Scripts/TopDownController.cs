@@ -23,6 +23,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private double m_StepCycle;
         private double m_NextStep;
         public Slider staminaSlider;
+        public Slider scoreSlider;
         public Image crosshair;
         public Camera mainCamera;
         public GameObject fpCamera;
@@ -31,6 +32,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public GameObject trapPrefab;
         public int trapsUsed;
         public static bool test = false;
+        public static int score;
 
 
         void Start()
@@ -113,6 +115,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         void FixedUpdate()
         {
+            scoreSlider.value = score;
             if (mainCamera.enabled == false)
             {
                 if (stamina <= staminaStart)
@@ -122,7 +125,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
                 return;
             }
-
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
             movement = new Vector3(horizontal, 0, vertical);
