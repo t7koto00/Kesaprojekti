@@ -53,7 +53,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         void Update()
         {
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.Mouse0) && FpsCamera.enabled == true)
             {
                 test = true;
             }

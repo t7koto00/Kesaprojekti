@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class PaintExample : MonoBehaviour
 {
@@ -87,12 +88,14 @@ public class PaintExample : MonoBehaviour
             else
             {
                 audioSource.Stop();
+                TopDownController.test = false;
             }
         }
         else
         {
             HoldingButtonDown = false;
             audioSource.Stop();
+            TopDownController.test = false;
         }
     }
 
