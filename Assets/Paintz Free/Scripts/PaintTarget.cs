@@ -255,7 +255,11 @@ public class PaintTarget : MonoBehaviour
         {
             TopDownController.score = TopDownController.score + 10;
             target.maxScore = target.maxScore + 10;
-            Debug.Log(TopDownController.score);
+            if (target.maxScore % 50 == 0)
+            {
+                FloatingTextController.CreateFloatingText(10.ToString(), target.transform);
+            }
+           
         }
        
         target.PaintSplat(newPaint);
@@ -342,6 +346,7 @@ public class PaintTarget : MonoBehaviour
 
     private void Start()
     {
+        FloatingTextController.Initialize();
         CheckValid();
         if (SetupOnStart) SetupPaint();
     }

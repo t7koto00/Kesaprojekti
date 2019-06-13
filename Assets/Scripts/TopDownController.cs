@@ -51,6 +51,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             QualitySettings.vSyncCount = 0;
             //Application.targetFrameRate = 40;
             m_MouseLook.Init(transform, fpCamera.transform);
+            score = 0;
         }
 
         void Update()
