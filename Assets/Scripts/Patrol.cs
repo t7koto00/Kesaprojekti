@@ -14,7 +14,6 @@ public class Patrol : MonoBehaviour
     AudioSource audioSource;
     public AudioClip caught;
     public AudioClip spotted;
-    private static bool test1;
     private static bool playerSpotted;
     
     void Start()
@@ -26,10 +25,9 @@ public class Patrol : MonoBehaviour
     void FixedUpdate()
     {
         float distance = Vector3.Distance(player.position, transform.position);
-        test1 = TopDownController.test;
         InFront();
         HaveLineOfSight();
-        if (InFront() && HaveLineOfSight()  || test1 == true && distance <= 40)
+        if (InFront() && HaveLineOfSight())
         {
             playerSpotted = true;
             float t = Mathf.PingPong(Time.time, 0.7f) / 0.7f;
@@ -45,6 +43,15 @@ public class Patrol : MonoBehaviour
             }
 
             transform.LookAt(transform.position + lookDir, Vector3.up);
+        }
+        else if(GameObject.Find("SoundTarget(Clone)") == true)
+        {
+            var sound = GameObject.Find("SoundTarget(Clone)");
+            agent.SetDestination(sound.transform.position);
+            if((transform.position - sound.transform.position).sqrMagnitude < 1 * 1)
+            {
+                Destroy(GameObject.Find("SoundTarget(Clone)"), 0);
+            }
         }
         else
         {
@@ -95,7 +102,7 @@ public class Patrol : MonoBehaviour
     {
         if (col.collider.tag == "Player")
         {
-            if (playerSpotted == true || test1 == true)
+            if (playerSpotted == true)
             {
                 //audioSource.clip = caught;
                 //audioSource.Play();

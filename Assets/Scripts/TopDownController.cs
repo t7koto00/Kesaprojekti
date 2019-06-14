@@ -30,8 +30,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         Camera FpsCamera;
         [SerializeField] private MouseLook m_MouseLook;
         public GameObject trapPrefab;
+        public GameObject soundTargetPrefab;
         public int trapsUsed;
-        public static bool test = false;
         public static int score;
         Outline scoreOutline;
         Image scoreImage;
@@ -72,14 +72,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             if (Input.GetKey(KeyCode.Mouse0) && FpsCamera.enabled == true)
             {
-                test = true;
+                if (GameObject.Find("SoundTarget(Clone)") == true)
+                {
+                    Destroy(GameObject.Find("SoundTarget(Clone)"), 0);
+                    Instantiate(soundTargetPrefab, transform.position, transform.rotation);
+
+                }
+                else
+                {
+                    Instantiate(soundTargetPrefab, transform.position, transform.rotation);
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 mainCamera.enabled = !mainCamera.enabled;
                 FpsCamera.enabled = !FpsCamera.enabled;
-                test = false;
                 m_MouseLook.Init(transform, fpCamera.transform);
 
             }
@@ -163,7 +171,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
                 else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
                 {
-                    test = true;
+                    if (GameObject.Find("SoundTarget(Clone)") == true)
+                    {
+                        Destroy(GameObject.Find("SoundTarget(Clone)"), 0);
+                        Instantiate(soundTargetPrefab, transform.position, transform.rotation);
+
+                    }
+                    else
+                    {
+                        Instantiate(soundTargetPrefab, transform.position, transform.rotation);
+                    }
                     if (!audioSource.isPlaying)
                     { playing = false; }
                     ProgressStepCycle(sprintSpeed);
@@ -171,12 +188,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     stamina = stamina - 1;
                     staminaSlider.value = (float)stamina;
                 }
-                else if (!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.W) || !Input.GetKey(KeyCode.S) || !Input.GetKey(KeyCode.D))
-                { test = false; }
             }
             else
             {
-                test = false;
                 rigidBody.velocity = movement * speed;
                 ProgressStepCycle(speed);
 

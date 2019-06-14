@@ -28016,16 +28016,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 435076894484384104, guid: e1f32ca4102eb024f8597c30dfb9c591,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 435076894484384104, guid: e1f32ca4102eb024f8597c30dfb9c591,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 435076894484813130, guid: e1f32ca4102eb024f8597c30dfb9c591,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28086,6 +28076,16 @@ PrefabInstance:
       propertyPath: cube
       value: 
       objectReference: {fileID: 728223396}
+    - target: {fileID: 435076894484384104, guid: e1f32ca4102eb024f8597c30dfb9c591,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435076894484384104, guid: e1f32ca4102eb024f8597c30dfb9c591,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1f32ca4102eb024f8597c30dfb9c591, type: 3}
 --- !u!1001 &2785012755390326341
@@ -28175,6 +28175,12 @@ PrefabInstance:
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 770858893}
+    - target: {fileID: 2785012754315774196, guid: f902dc2b51a23a84c87974440a1c3928,
+        type: 3}
+      propertyPath: soundTargetPrefab
+      value: 
+      objectReference: {fileID: 481701925672546929, guid: d9b0d5c06f4f8be4f8c4c01acb6e7d52,
+        type: 3}
     - target: {fileID: 2785012754315774205, guid: f902dc2b51a23a84c87974440a1c3928,
         type: 3}
       propertyPath: BatterySlider
@@ -28193,6 +28199,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Guard
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895686251430274364, guid: 12eafba2476cabc4d93b867bc0395514,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686251430274357, guid: 12eafba2476cabc4d93b867bc0395514,
         type: 3}
