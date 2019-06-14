@@ -331,12 +331,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   sprintSpeed: 8
-  stamina: 150
+  stamina: 15000
   outOfBreath: {fileID: 8300000, guid: 3f175d7702653f341a0fca7219d5c789, type: 3}
   walkingSound:
   - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   staminaSlider: {fileID: 0}
+  scoreSlider: {fileID: 0}
   crosshair: {fileID: 0}
   mainCamera: {fileID: 2785012754741110817}
   fpCamera: {fileID: 720476131}
@@ -349,6 +350,9 @@ MonoBehaviour:
     smooth: 0
     smoothTime: 5
     lockCursor: 1
+  trapPrefab: {fileID: 5568649098496064656, guid: dcf712f805fc05d44ae811ebf57b07a2,
+    type: 3}
+  trapsUsed: 0
 --- !u!114 &2785012754315774205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,7 +741,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 5.2358598e+11, z: 6.74e-43, w: 8.56512e+11}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

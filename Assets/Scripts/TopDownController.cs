@@ -33,6 +33,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public int trapsUsed;
         public static bool test = false;
         public static int score;
+        Outline scoreOutline;
+        Image scoreImage;
+        Color orange = new Color(8f / 255f, 211f / 255f, 255f / 255f);
+        Color cyan = new Color(255f / 255f, 152f / 255f, 0f / 255f);
 
 
         void Start()
@@ -52,15 +56,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
             //Application.targetFrameRate = 40;
             m_MouseLook.Init(transform, fpCamera.transform);
             score = 0;
+            scoreOutline = GameObject.Find("ScoreSlider/Background").GetComponent<Outline>();
+            scoreImage = GameObject.Find("ScoreSlider/Fill Area/Fill").GetComponent<Image>();
+
         }
 
         void Update()
         {
+            if (score >= 10000)
+            {
+                scoreOutline.enabled = true;
+                float t = Mathf.PingPong(Time.time, 0.7f) / 0.7f;
+                scoreOutline.effectColor = Color.Lerp(orange, cyan, t);
+                scoreImage.color = Color.Lerp(orange, cyan, t);
+            }
             if (Input.GetKey(KeyCode.Mouse0) && FpsCamera.enabled == true)
             {
                 test = true;
             }
-            
+
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 mainCamera.enabled = !mainCamera.enabled;
@@ -91,11 +105,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 crosshair.enabled = false;
                 transform.LookAt(transform.position + lookDir, Vector3.up);
             }
-            else if(FpsCamera.enabled == true)
+            else if (FpsCamera.enabled == true)
             {
                 RotateView();
             }
-        
+
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (trapsUsed < 3)
@@ -112,7 +126,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
                 else { Debug.Log("No traps left"); }
             }
-    }
+        }
 
         void FixedUpdate()
         {
@@ -217,5 +231,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MouseLook.LookRotation(transform, FpsCamera.transform);
         }
 
+        void OnCollisionEnter(Collision col)
+        {
+            if (col.collider.tag == "Exit" && score >= 10000)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Victory");
+            }
+        }
     }
 }
