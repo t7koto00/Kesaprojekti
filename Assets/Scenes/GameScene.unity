@@ -28100,6 +28100,12 @@ PrefabInstance:
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 770858893}
+    - target: {fileID: 2785012754315774196, guid: f902dc2b51a23a84c87974440a1c3928,
+        type: 3}
+      propertyPath: soundTargetPrefab
+      value: 
+      objectReference: {fileID: 481701925672546929, guid: d9b0d5c06f4f8be4f8c4c01acb6e7d52,
+        type: 3}
     - target: {fileID: 2785012754315774205, guid: f902dc2b51a23a84c87974440a1c3928,
         type: 3}
       propertyPath: BatterySlider
@@ -28122,7 +28128,7 @@ PrefabInstance:
     - target: {fileID: 3895686251430274364, guid: 12eafba2476cabc4d93b867bc0395514,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686251430274357, guid: 12eafba2476cabc4d93b867bc0395514,
         type: 3}
