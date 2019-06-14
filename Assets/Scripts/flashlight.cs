@@ -8,7 +8,7 @@ public class flashlight : MonoBehaviour
     private Light lt;
     AudioSource audioData;
     public AudioClip onSound;
-    private double battery = 50;
+    private double battery = 100;
     public Slider BatterySlider;
 
     // Start is called before the first frame update
@@ -22,12 +22,21 @@ public class flashlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            lt.enabled = !lt.enabled;
+            audioData.clip = onSound;
+            audioData.Play();
+        }
+    }
+    void FixedUpdate()
+    {
         BatterySlider.value = (float)battery;
         if (lt.enabled == true)
         {
             battery = battery - 0.1;
         }
-        if(lt.enabled == false)
+        if (lt.enabled == false)
         {
             battery = battery + 0.05;
         }
@@ -40,11 +49,5 @@ public class flashlight : MonoBehaviour
             battery = 100;
         }
         Debug.Log(battery);
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            lt.enabled = !lt.enabled;
-            audioData.clip = onSound;
-            audioData.Play();
-        }
     }
 }
