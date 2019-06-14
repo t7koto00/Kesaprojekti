@@ -38,7 +38,7 @@ public class flashlight : MonoBehaviour
         }
         if (lt.enabled == false)
         {
-            battery = battery + 0.05;
+            battery = battery + 0.075;
         }
         if (battery <= 0)
         {
@@ -48,6 +48,6 @@ public class flashlight : MonoBehaviour
         {
             battery = 100;
         }
-        Debug.Log(battery);
+        //Debug.Log(battery);
     }
 }

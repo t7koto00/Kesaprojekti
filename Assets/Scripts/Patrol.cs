@@ -34,7 +34,7 @@ public class Patrol : MonoBehaviour
             guardLight.color = Color.Lerp(Color.red, Color.blue, t);
             Vector3 pos = Vector3.MoveTowards(transform.position, player.transform.position, 5 * Time.deltaTime);
             agent.SetDestination(player.transform.position);
-            
+            Destroy(GameObject.Find("SoundTarget(Clone)"), 0);
             Vector3 lookDir = pos - transform.position;
             lookDir.y = 0;
             if (!audioSource.isPlaying) { 
