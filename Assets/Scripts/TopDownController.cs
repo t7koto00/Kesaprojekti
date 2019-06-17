@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 namespace UnityStandardAssets.Characters.FirstPerson
 {
 
@@ -249,7 +250,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             if (col.collider.tag == "Exit" && score >= 10000)
             {
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Victory");
+                SceneManager.LoadSceneAsync("Victory");
             }
         }
     }

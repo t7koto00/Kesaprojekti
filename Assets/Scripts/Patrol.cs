@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.SceneManagement;
 
 public class Patrol : MonoBehaviour
 {
@@ -107,7 +108,7 @@ public class Patrol : MonoBehaviour
                 //audioSource.clip = caught;
                 //audioSource.Play();
                 Debug.Log("Collision with player");
-                UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+                SceneManager.LoadSceneAsync("GameOver");
             }
             else
             {
