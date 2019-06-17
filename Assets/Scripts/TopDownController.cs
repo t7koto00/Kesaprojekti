@@ -89,7 +89,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 mainCamera.enabled = !mainCamera.enabled;
                 FpsCamera.enabled = !FpsCamera.enabled;
+
+                Quaternion originalRot = transform.rotation;
+                fpCamera.transform.rotation = originalRot * Quaternion.AngleAxis(0, Vector3.up);
                 m_MouseLook.Init(transform, fpCamera.transform);
+               
 
             }
 

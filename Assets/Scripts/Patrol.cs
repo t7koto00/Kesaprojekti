@@ -105,14 +105,10 @@ public class Patrol : MonoBehaviour
         {
             if (playerSpotted == true)
             {
-                //audioSource.clip = caught;
-                //audioSource.Play();
-                Debug.Log("Collision with player");
                 SceneManager.LoadSceneAsync("GameOver");
             }
             else
             {
-                Debug.Log("Collision with hidden player");
                 /*Vector3 pos = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
               
                 Vector3 lookDir = pos - transform.position;
