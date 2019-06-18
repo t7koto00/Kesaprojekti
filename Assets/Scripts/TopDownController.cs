@@ -36,8 +36,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public static int score;
         Outline scoreOutline;
         Image scoreImage;
-        Color orange = new Color(8f / 255f, 211f / 255f, 255f / 255f);
-        Color cyan = new Color(255f / 255f, 152f / 255f, 0f / 255f);
+        Text scoreText;
+        Color cyan = new Color(8f / 255f, 211f / 255f, 255f / 255f);
+        Color orange = new Color(255f / 255f, 152f / 255f, 0f / 255f);
 
 
         void Start()
@@ -59,7 +60,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             score = 0;
             scoreOutline = GameObject.Find("ScoreSlider/Background").GetComponent<Outline>();
             scoreImage = GameObject.Find("ScoreSlider/Fill Area/Fill").GetComponent<Image>();
-
+            scoreText = GameObject.Find("ScoreSlider/Fill Area/Text").GetComponent<Text>();
         }
 
         void Update()
@@ -67,9 +68,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (score >= 10000)
             {
                 scoreOutline.enabled = true;
+                scoreText.enabled = true;
                 float t = Mathf.PingPong(Time.time, 0.7f) / 0.7f;
-                scoreOutline.effectColor = Color.Lerp(orange, cyan, t);
-                scoreImage.color = Color.Lerp(orange, cyan, t);
+                scoreOutline.effectColor = Color.Lerp(cyan, orange, t);
+                scoreImage.color = Color.Lerp(cyan, orange, t);
+                scoreText.color = Color.Lerp(orange, cyan, t);
             }
             if (Input.GetKey(KeyCode.Mouse0) && FpsCamera.enabled == true)
             {
@@ -256,6 +259,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 SceneManager.LoadSceneAsync("Victory");
             }
-        }
+        } 
     }
 }
