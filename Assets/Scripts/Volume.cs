@@ -25,6 +25,5 @@ public class Volume : MonoBehaviour
     {
         mixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("MusicVolume", sliderValue);
-        Debug.Log(sliderValue);
     }
 }
