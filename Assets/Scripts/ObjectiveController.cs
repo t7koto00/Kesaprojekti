@@ -13,8 +13,8 @@ public class ObjectiveController : MonoBehaviour
     private bool statuesDone = false;
     private bool guardsDone = false;
     public GameObject objectives;
-    public int scoreGain;
-    public int bonusScore;
+    private int scoreGain;
+    private int bonusScore;
     // Start is called before the first frame update
     void Start()
     {
