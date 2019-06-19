@@ -161,6 +161,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CB_Discobolus_LOD2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 116890, guid: e9a952fff0d5ee546bceadcd5743474e, type: 3}
+      propertyPath: m_TagString
+      value: statue
+      objectReference: {fileID: 0}
     - target: {fileID: 490578, guid: e9a952fff0d5ee546bceadcd5743474e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.524235
@@ -234,7 +238,7 @@ GameObject:
   - component: {fileID: 107289562}
   m_Layer: 0
   m_Name: Painting (19)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -519,7 +523,7 @@ GameObject:
   - component: {fileID: 118402308}
   m_Layer: 0
   m_Name: Painting (1)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -681,7 +685,7 @@ GameObject:
   - component: {fileID: 138532902}
   m_Layer: 0
   m_Name: Painting (20)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -792,7 +796,7 @@ GameObject:
   - component: {fileID: 202783282}
   m_Layer: 0
   m_Name: Painting (13)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -989,6 +993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CB_Discobolus_LOD2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 116890, guid: e9a952fff0d5ee546bceadcd5743474e, type: 3}
+      propertyPath: m_TagString
+      value: statue
+      objectReference: {fileID: 0}
     - target: {fileID: 490578, guid: e9a952fff0d5ee546bceadcd5743474e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 24.294235
@@ -1162,6 +1170,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CB_Discobolus_LOD1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 169058, guid: 1e90e95b47816f541b663890e3c2118b, type: 3}
+      propertyPath: m_TagString
+      value: statue
+      objectReference: {fileID: 0}
     - target: {fileID: 450060, guid: 1e90e95b47816f541b663890e3c2118b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.9757652
@@ -1235,7 +1247,7 @@ GameObject:
   - component: {fileID: 316885094}
   m_Layer: 0
   m_Name: Painting
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1615,10 +1627,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 554401433}
   - {fileID: 770858892}
+  - {fileID: 554401433}
   - {fileID: 206193981}
   - {fileID: 2042608562}
+  - {fileID: 619326694}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1760,7 +1773,7 @@ RectTransform:
   - {fileID: 1190904951}
   - {fileID: 2003511633}
   m_Father: {fileID: 451191335}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1886,6 +1899,41 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &619326693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 619326694}
+  m_Layer: 0
+  m_Name: Objectives
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &619326694
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619326693}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 451191335}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -125}
+  m_SizeDelta: {x: 400, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &645009038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,7 +1949,7 @@ GameObject:
   - component: {fileID: 645009043}
   m_Layer: 0
   m_Name: Painting (16)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2334,6 +2382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CB_Discobolus_LOD2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 116890, guid: e9a952fff0d5ee546bceadcd5743474e, type: 3}
+      propertyPath: m_TagString
+      value: statue
+      objectReference: {fileID: 0}
     - target: {fileID: 490578, guid: e9a952fff0d5ee546bceadcd5743474e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.524235
@@ -2419,15 +2471,15 @@ RectTransform:
   m_GameObject: {fileID: 770858891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 451191335}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 500}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &770858893
 MonoBehaviour:
@@ -2615,7 +2667,7 @@ GameObject:
   - component: {fileID: 832897826}
   m_Layer: 0
   m_Name: Painting (5)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2727,6 +2779,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895686251430274364, guid: 12eafba2476cabc4d93b867bc0395514,
+        type: 3}
+      propertyPath: m_TagString
+      value: guard
       objectReference: {fileID: 0}
     - target: {fileID: 3895686251430274357, guid: 12eafba2476cabc4d93b867bc0395514,
         type: 3}
@@ -3409,6 +3466,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CB_Discobolus_LOD2
       objectReference: {fileID: 0}
+    - target: {fileID: 116890, guid: e9a952fff0d5ee546bceadcd5743474e, type: 3}
+      propertyPath: m_TagString
+      value: statue
+      objectReference: {fileID: 0}
     - target: {fileID: 490578, guid: e9a952fff0d5ee546bceadcd5743474e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.9757652
@@ -3846,7 +3907,7 @@ GameObject:
   - component: {fileID: 966670942}
   m_Layer: 0
   m_Name: Painting (12)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3957,7 +4018,7 @@ GameObject:
   - component: {fileID: 991237628}
   m_Layer: 0
   m_Name: Painting (11)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4142,7 +4203,7 @@ GameObject:
   - component: {fileID: 1150120446}
   m_Layer: 0
   m_Name: Painting (3)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4296,6 +4357,7 @@ MonoBehaviour:
   soundTargetPrefab: {fileID: 481701925672546929, guid: d9b0d5c06f4f8be4f8c4c01acb6e7d52,
     type: 3}
   trapsUsed: 0
+  objectives: {fileID: 619326693}
 --- !u!54 &1168373345
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4623,6 +4685,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1168373351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168373342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654cd442843c43c43887b55c45936638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectives: {fileID: 619326693}
 --- !u!1 &1190904950
 GameObject:
   m_ObjectHideFlags: 0
@@ -4712,7 +4787,7 @@ GameObject:
   - component: {fileID: 1191495293}
   m_Layer: 0
   m_Name: Painting (7)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5159,7 +5234,7 @@ GameObject:
   - component: {fileID: 1391162260}
   m_Layer: 0
   m_Name: Painting (6)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5272,6 +5347,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3895686251430274364, guid: 12eafba2476cabc4d93b867bc0395514,
+        type: 3}
+      propertyPath: m_TagString
+      value: guard
+      objectReference: {fileID: 0}
     - target: {fileID: 3895686251430274357, guid: 12eafba2476cabc4d93b867bc0395514,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5375,7 +5455,7 @@ GameObject:
   - component: {fileID: 1399659007}
   m_Layer: 0
   m_Name: Painting (17)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5477,7 +5557,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30620
+  m_Name: pb_Mesh75700
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5699,7 +5779,7 @@ GameObject:
   - component: {fileID: 1499479547}
   m_Layer: 0
   m_Name: Painting (18)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5949,7 +6029,7 @@ GameObject:
   - component: {fileID: 1610001324}
   m_Layer: 0
   m_Name: Painting (9)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6126,7 +6206,7 @@ GameObject:
   - component: {fileID: 1745612617}
   m_Layer: 0
   m_Name: Painting (15)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6237,7 +6317,7 @@ GameObject:
   - component: {fileID: 1754543773}
   m_Layer: 0
   m_Name: Painting (2)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6348,7 +6428,7 @@ GameObject:
   - component: {fileID: 1795073828}
   m_Layer: 0
   m_Name: Painting (10)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6545,6 +6625,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CB_Discobolus_LOD1
       objectReference: {fileID: 0}
+    - target: {fileID: 169058, guid: 1e90e95b47816f541b663890e3c2118b, type: 3}
+      propertyPath: m_TagString
+      value: statue
+      objectReference: {fileID: 0}
     - target: {fileID: 450060, guid: 1e90e95b47816f541b663890e3c2118b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.484234
@@ -6613,6 +6697,10 @@ PrefabInstance:
     - target: {fileID: 169058, guid: 1e90e95b47816f541b663890e3c2118b, type: 3}
       propertyPath: m_Name
       value: CB_Discobolus_LOD1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169058, guid: 1e90e95b47816f541b663890e3c2118b, type: 3}
+      propertyPath: m_TagString
+      value: statue
       objectReference: {fileID: 0}
     - target: {fileID: 450060, guid: 1e90e95b47816f541b663890e3c2118b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6897,7 +6985,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30908
+  m_Name: pb_Mesh75988
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7089,7 +7177,7 @@ GameObject:
   - component: {fileID: 2054786072}
   m_Layer: 0
   m_Name: Painting (8)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28996,7 +29084,7 @@ GameObject:
   - component: {fileID: 2096453750}
   m_Layer: 0
   m_Name: Painting (14)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29107,7 +29195,7 @@ GameObject:
   - component: {fileID: 2135445902}
   m_Layer: 0
   m_Name: Painting (4)
-  m_TagString: Untagged
+  m_TagString: painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29395,6 +29483,16 @@ PrefabInstance:
       propertyPath: stamina
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 2785012754315774196, guid: f902dc2b51a23a84c87974440a1c3928,
+        type: 3}
+      propertyPath: objectiveText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785012754315774196, guid: f902dc2b51a23a84c87974440a1c3928,
+        type: 3}
+      propertyPath: objectives
+      value: 
+      objectReference: {fileID: 619326693}
     - target: {fileID: 2785012754315774205, guid: f902dc2b51a23a84c87974440a1c3928,
         type: 3}
       propertyPath: BatterySlider
@@ -29469,6 +29567,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895686251430274364, guid: 12eafba2476cabc4d93b867bc0395514,
+        type: 3}
+      propertyPath: m_TagString
+      value: guard
       objectReference: {fileID: 0}
     - target: {fileID: 3895686251430274357, guid: 12eafba2476cabc4d93b867bc0395514,
         type: 3}

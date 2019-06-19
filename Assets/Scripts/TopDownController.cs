@@ -39,6 +39,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         Text scoreText;
         Color cyan = new Color(8f / 255f, 211f / 255f, 255f / 255f);
         Color orange = new Color(255f / 255f, 152f / 255f, 0f / 255f);
+        public GameObject objectives;
 
 
         void Start()
@@ -88,7 +89,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 mainCamera.enabled = !mainCamera.enabled;
                 FpsCamera.enabled = !FpsCamera.enabled;
@@ -141,6 +142,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     }
                 }
                 else { Debug.Log("No traps left"); }
+            }
+
+            if(Input.GetKey(KeyCode.Tab))
+            {
+                objectives.SetActive(true);
+            }
+            else
+            {
+                objectives.SetActive(false);
             }
         }
 
@@ -252,7 +262,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             crosshair.enabled = true;
             m_MouseLook.LookRotation(transform, FpsCamera.transform);
         }
-
+        
         void OnCollisionEnter(Collision col)
         {
             if (col.collider.tag == "Exit" && score >= 10000)
