@@ -65,6 +65,7 @@ public class PaintTarget : MonoBehaviour
     private static RenderTexture RT4;
     private static Texture2D Tex4;
     private int maxScore = 0;
+    private bool painted = false;
 
     private static GameObject splatObject;
 
@@ -259,7 +260,22 @@ public class PaintTarget : MonoBehaviour
             {
                 FloatingTextController.CreateFloatingText(10.ToString(), target.transform);
             }
-           
+            if(target.tag == "painting" && target.painted == false)
+            {
+                ObjectiveController.paintings = ObjectiveController.paintings + 1;
+                target.painted = true;
+            }
+            if(target.tag == "statue" && target.painted == false)
+            {
+                ObjectiveController.statues = ObjectiveController.statues + 1;
+                target.painted = true;
+            }
+            if (target.tag == "guard" && target.painted == false)
+            {
+                ObjectiveController.guards = ObjectiveController.guards + 1;
+                target.painted = true;
+            }
+
         }
        
         target.PaintSplat(newPaint);
