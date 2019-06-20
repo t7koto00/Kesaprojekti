@@ -4586,7 +4586,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh238222
+  m_Name: pb_Mesh94098
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6014,7 +6014,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh238542
+  m_Name: pb_Mesh94390
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28688,6 +28688,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1168373347}
+    - target: {fileID: 3895686251430274354, guid: 12eafba2476cabc4d93b867bc0395514,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895686251430274354, guid: 12eafba2476cabc4d93b867bc0395514,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3895686251430274356, guid: 12eafba2476cabc4d93b867bc0395514,
         type: 3}
       propertyPath: OutputAudioMixerGroup

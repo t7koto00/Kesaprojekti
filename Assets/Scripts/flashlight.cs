@@ -31,23 +31,27 @@ public class flashlight : MonoBehaviour
     }
     void FixedUpdate()
     {
-        BatterySlider.value = (float)battery;
-        if (lt.enabled == true)
+        if (PlayerPrefs.GetInt("BatteryToggle") == 1)
         {
-            battery = battery - 0.1;
+            BatterySlider.value = (float)battery;
+            if (lt.enabled == true)
+            {
+                battery = battery - 0.1;
+            }
+            if (lt.enabled == false)
+            {
+                battery = battery + 0.075;
+            }
+            if (battery <= 0)
+            {
+                lt.enabled = false;
+            }
+            if (battery > 100)
+            {
+                battery = 100;
+            }
         }
-        if (lt.enabled == false)
-        {
-            battery = battery + 0.075;
-        }
-        if (battery <= 0)
-        {
-            lt.enabled = false;
-        }
-        if (battery > 100)
-        {
-            battery = 100;
-        }
+        
         //Debug.Log(battery);
     }
 }

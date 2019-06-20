@@ -8,6 +8,12 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject Optionsmenu;
     public GameObject Mainmenu;
+    public GameObject batterySwitch;
+
+    void Start()
+    {
+        PlayerPrefs.SetInt("BatteryToggle", 1);
+    }
 
     public void PlayGame()
     {
@@ -30,5 +36,19 @@ public class MainMenu : MonoBehaviour
     {
         Mainmenu.SetActive(true);
         Optionsmenu.SetActive(false);
+    }
+
+    public void ToggleFlashlightBattery()
+    {
+        if(PlayerPrefs.GetInt("BatteryToggle") == 1)
+        {
+            PlayerPrefs.SetInt("BatteryToggle", 0);
+            batterySwitch.GetComponent<Text>().text = "OFF";
+        }
+        else
+        {
+            PlayerPrefs.SetInt("BatteryToggle", 1);
+            batterySwitch.GetComponent<Text>().text = "ON";
+        }
     }
 }
