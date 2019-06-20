@@ -2513,7 +2513,7 @@ PrefabInstance:
     - target: {fileID: 3895686251430274364, guid: 12eafba2476cabc4d93b867bc0395514,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686251430274364, guid: 12eafba2476cabc4d93b867bc0395514,
         type: 3}
@@ -2600,12 +2600,27 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1168373347}
+    - target: {fileID: 3895686251430274354, guid: 12eafba2476cabc4d93b867bc0395514,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3895686251430274356, guid: 12eafba2476cabc4d93b867bc0395514,
         type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 1189476486174143921, guid: ca9b8c09283abad4fbbab9cfbfc45436,
         type: 2}
+    - target: {fileID: -1345287748965286282, guid: 12eafba2476cabc4d93b867bc0395514,
+        type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1345287748965286282, guid: 12eafba2476cabc4d93b867bc0395514,
+        type: 3}
+      propertyPath: avoidancePriority
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12eafba2476cabc4d93b867bc0395514, type: 3}
 --- !u!1 &885004322
@@ -4374,7 +4389,7 @@ PrefabInstance:
     - target: {fileID: 3895686251430274364, guid: 12eafba2476cabc4d93b867bc0395514,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3895686251430274364, guid: 12eafba2476cabc4d93b867bc0395514,
         type: 3}
@@ -4461,12 +4476,27 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1168373347}
+    - target: {fileID: 3895686251430274354, guid: 12eafba2476cabc4d93b867bc0395514,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3895686251430274356, guid: 12eafba2476cabc4d93b867bc0395514,
         type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 1189476486174143921, guid: ca9b8c09283abad4fbbab9cfbfc45436,
         type: 2}
+    - target: {fileID: -1345287748965286282, guid: 12eafba2476cabc4d93b867bc0395514,
+        type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1345287748965286282, guid: 12eafba2476cabc4d93b867bc0395514,
+        type: 3}
+      propertyPath: avoidancePriority
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12eafba2476cabc4d93b867bc0395514, type: 3}
 --- !u!1 &1399659002
@@ -28598,16 +28628,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guard
       objectReference: {fileID: 0}
-    - target: {fileID: 3895686251430274364, guid: 12eafba2476cabc4d93b867bc0395514,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895686251430274364, guid: 12eafba2476cabc4d93b867bc0395514,
-        type: 3}
-      propertyPath: m_TagString
-      value: guard
-      objectReference: {fileID: 0}
     - target: {fileID: 3895686251430274357, guid: 12eafba2476cabc4d93b867bc0395514,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28688,11 +28708,5 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1168373347}
-    - target: {fileID: 3895686251430274356, guid: 12eafba2476cabc4d93b867bc0395514,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 1189476486174143921, guid: ca9b8c09283abad4fbbab9cfbfc45436,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12eafba2476cabc4d93b867bc0395514, type: 3}
