@@ -15,7 +15,7 @@ public class Patrol : MonoBehaviour
     AudioSource audioSource;
     public AudioClip caught;
     public AudioClip spotted;
-    private static bool playerSpotted;
+    private static bool playerSpotted = false;
     
     void Start()
     {
@@ -26,8 +26,6 @@ public class Patrol : MonoBehaviour
     void FixedUpdate()
     {
         float distance = Vector3.Distance(player.position, transform.position);
-        InFront();
-        HaveLineOfSight();
         if (InFront() && HaveLineOfSight())
         {
             playerSpotted = true;
@@ -103,19 +101,19 @@ public class Patrol : MonoBehaviour
     {
         if (col.collider.tag == "Player")
         {
-            if (playerSpotted == true)
-            {
+           //if (playerSpotted == true)
+            //{
                 SceneManager.LoadSceneAsync("GameOver");
-            }
-            else
-            {
+            //}
+            //else
+            //{
                 /*Vector3 pos = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
               
                 Vector3 lookDir = pos - transform.position;
                 lookDir.y = 0;
 
                 transform.LookAt(transform.position + lookDir, Vector3.up);*/
-            }
+            //}
         }
     }
 }
