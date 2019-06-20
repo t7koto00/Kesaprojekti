@@ -40,6 +40,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         Color cyan = new Color(8f / 255f, 211f / 255f, 255f / 255f);
         Color orange = new Color(255f / 255f, 152f / 255f, 0f / 255f);
         public GameObject objectives;
+        public GameObject model;
 
 
         void Start()
@@ -120,6 +121,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MouseLook.SetCursorLock(false);
                 Cursor.visible = true;
                 crosshair.enabled = false;
+                model.SetActive(true);
                 transform.LookAt(transform.position + lookDir, Vector3.up);
             }
             else if (FpsCamera.enabled == true)
@@ -257,6 +259,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             GameObject.Find("FPCamera").GetComponent<PaintExample>().enabled = true;
             GameObject.Find("FPCamera").GetComponent<AudioSource>().enabled = true;
+            model.SetActive(false);
             //m_MouseLook.SetCursorLock(true);
             Cursor.visible = false;
             crosshair.enabled = true;
