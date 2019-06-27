@@ -17,4 +17,9 @@ public class ChangeCursor : MonoBehaviour
     {
         Cursor.SetCursor(null, Vector2.zero, cursorMode);
     }
+
+    public void OnMouseClicked()
+    {
+        Cursor.SetCursor(null, Vector2.zero, cursorMode);
+    }
 }
