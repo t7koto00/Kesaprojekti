@@ -90,7 +90,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Mouse1))
+            if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Q))
             {
                 mainCamera.enabled = !mainCamera.enabled;
                 FpsCamera.enabled = !FpsCamera.enabled;
