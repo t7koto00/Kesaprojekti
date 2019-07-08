@@ -39,6 +39,18 @@ public class ObjectiveController : MonoBehaviour
             CreateObjective("Paint 5 statues: " + statues.ToString() + "/5", 200, -70, "2");
             CreateObjective("Paint 2 guards: " + guards.ToString() + "/2", 200, -90, "3");
         }
+        else if (sceneName == "#1 Museo")
+        {
+            CreateObjective("Paint 10 paintings: " + paintings.ToString() + "/10", 200, -50, "1");
+            CreateObjective("Paint 5 statues: " + statues.ToString() + "/5", 200, -70, "2");
+            CreateObjective("Paint 2 guards: " + guards.ToString() + "/2", 200, -90, "3");
+        }
+        else if (sceneName == "JokuMuseo")
+        {
+            CreateObjective("Paint 10 paintings: " + paintings.ToString() + "/10", 200, -50, "1");
+            CreateObjective("Paint 5 statues: " + statues.ToString() + "/5", 200, -70, "2");
+            CreateObjective("Paint 2 guards: " + guards.ToString() + "/2", 200, -90, "3");
+        }
     }
 
     // Update is called once per frame
@@ -98,6 +110,60 @@ public class ObjectiveController : MonoBehaviour
                 TopDownController.score = TopDownController.score + 5;
             }
         }
+        else if (sceneName == "#1 Museo")
+        {
+            if (paintings >= 10 && paintingsDone == false)
+            {
+                paintingsDone = true;
+                scoreGain = scoreGain + 2000;
+                FloatingTextController.CreateFloatingText(2000.ToString(), objectives.transform);
+            }
+            if (statues >= 5 && statuesDone == false)
+            {
+                statuesDone = true;
+                scoreGain = scoreGain + 2000;
+                FloatingTextController.CreateFloatingText(2000.ToString(), objectives.transform);
+            }
+            if (guards >= 2 && guardsDone == false)
+            {
+                guardsDone = true;
+                scoreGain = scoreGain + 2000;
+                FloatingTextController.CreateFloatingText(2000.ToString(), objectives.transform);
+            }
+
+            if (scoreGain > bonusScore)
+            {
+                bonusScore = bonusScore + 5;
+                TopDownController.score = TopDownController.score + 5;
+            }
+        }
+        else if (sceneName == "JokuMuseo")
+        {
+            if (paintings >= 10 && paintingsDone == false)
+            {
+                paintingsDone = true;
+                scoreGain = scoreGain + 2000;
+                FloatingTextController.CreateFloatingText(2000.ToString(), objectives.transform);
+            }
+            if (statues >= 5 && statuesDone == false)
+            {
+                statuesDone = true;
+                scoreGain = scoreGain + 2000;
+                FloatingTextController.CreateFloatingText(2000.ToString(), objectives.transform);
+            }
+            if (guards >= 2 && guardsDone == false)
+            {
+                guardsDone = true;
+                scoreGain = scoreGain + 2000;
+                FloatingTextController.CreateFloatingText(2000.ToString(), objectives.transform);
+            }
+
+            if (scoreGain > bonusScore)
+            {
+                bonusScore = bonusScore + 5;
+                TopDownController.score = TopDownController.score + 5;
+            }
+        }
     }
     
     void FixedUpdate()
@@ -131,6 +197,18 @@ public class ObjectiveController : MonoBehaviour
             objectives.transform.Find("3").GetComponent<Text>().text = "Paint a guard: " + guards.ToString() + "/1";
         }
         else if(sceneName == "GameSceneTonin")
+        {
+            objectives.transform.Find("1").GetComponent<Text>().text = "Paint 10 paintings: " + paintings.ToString() + "/10";
+            objectives.transform.Find("2").GetComponent<Text>().text = "Paint 5 statues: " + statues.ToString() + "/5";
+            objectives.transform.Find("3").GetComponent<Text>().text = "Paint 2 guards: " + guards.ToString() + "/2";
+        }
+        else if (sceneName == "#1 Museo")
+        {
+            objectives.transform.Find("1").GetComponent<Text>().text = "Paint 10 paintings: " + paintings.ToString() + "/10";
+            objectives.transform.Find("2").GetComponent<Text>().text = "Paint 5 statues: " + statues.ToString() + "/5";
+            objectives.transform.Find("3").GetComponent<Text>().text = "Paint 2 guards: " + guards.ToString() + "/2";
+        }
+        else if (sceneName == "JokuMuseo")
         {
             objectives.transform.Find("1").GetComponent<Text>().text = "Paint 10 paintings: " + paintings.ToString() + "/10";
             objectives.transform.Find("2").GetComponent<Text>().text = "Paint 5 statues: " + statues.ToString() + "/5";
