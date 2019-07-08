@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Victory.unity
     guid: 741fc4c1ba2e95c429d96f93d017de9c
+  - enabled: 1
+    path: Assets/Scenes/#1 Museo.unity
+    guid: cc0950916dabff14abc5b94a893a7940
+  - enabled: 1
+    path: Assets/Scenes/GameSceneTonin.unity
+    guid: 336807d796b2c3b47a5ccf629e07bfa1
+  - enabled: 1
+    path: Assets/Scenes/JokuMuseo.unity
+    guid: 6ef78ee65cd6fe343831f922d349fe3c
   m_configObjects: {}
