@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject Optionsmenu;
     public GameObject Mainmenu;
+    public GameObject LevelSelect;
     public GameObject batterySwitch;
 
     void Start()
@@ -17,7 +18,9 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+        Mainmenu.SetActive(false);
+        LevelSelect.SetActive(true);
     }
 
     public void ExitGame()
@@ -36,7 +39,24 @@ public class MainMenu : MonoBehaviour
     {
         Mainmenu.SetActive(true);
         Optionsmenu.SetActive(false);
+        LevelSelect.SetActive(false);
     }
+
+    public void Level1()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("#1 Museo");
+    }
+
+    public void Level2()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameSceneTonin");
+    }
+
+    public void Level3()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("JokuMuseo");
+    }
+
 
     public void ToggleFlashlightBattery()
     {
