@@ -41,6 +41,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         Color orange = new Color(255f / 255f, 152f / 255f, 0f / 255f);
         public GameObject objectives;
         public GameObject model;
+        Text trapCounterText;
 
 
         void Start()
@@ -63,10 +64,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             scoreOutline = GameObject.Find("ScoreSlider/Background").GetComponent<Outline>();
             scoreImage = GameObject.Find("ScoreSlider/Fill Area/Fill").GetComponent<Image>();
             scoreText = GameObject.Find("ScoreSlider/Fill Area/Text").GetComponent<Text>();
+            trapCounterText = GameObject.Find("Trap_counter").GetComponent<Text>();
         }
 
         void Update()
         {
+            trapCounterText.text = "Traps: " + (3 - trapsUsed) + "/3";
             if (score >= 10000)
             {
                 scoreOutline.enabled = true;
@@ -98,8 +101,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 Quaternion originalRot = transform.rotation;
                 fpCamera.transform.rotation = originalRot * Quaternion.AngleAxis(0, Vector3.up);
                 m_MouseLook.Init(transform, fpCamera.transform);
-               
-
             }
 
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -143,7 +144,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                         Instantiate(trapPrefab, transform.position + (transform.forward * 2), transform.rotation);
                     }
                 }
-                else { Debug.Log("No traps left"); }
+                //else { Debug.Log("No traps left"); }
             }
 
             if(Input.GetKey(KeyCode.Tab))

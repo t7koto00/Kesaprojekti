@@ -6,33 +6,37 @@ using UnityEngine.AI;
 public class Trap : MonoBehaviour
 {
 
-    public GameObject guard;
+    //public GameObject guard;
     public float secondsTrappedFor = 3.0f;
 
     void Start()
     {
-        guard = GameObject.Find("Guard");
+        //guard = GameObject.Find("Guard");
     }
    
     void Update()
     {
-        if ((transform.position - guard.transform.position).sqrMagnitude < 1 * 1)
+        GameObject[] guards = GameObject.FindGameObjectsWithTag("guard");
+        foreach (GameObject target in guards)
         {
-            guard.GetComponent<NavMeshAgent>().isStopped = true;
-
-
-            secondsTrappedFor -= Time.deltaTime;
-
-            if (secondsTrappedFor <= 0.0f)
+            float distance = Vector3.Distance(target.transform.position, transform.position);
+            if (distance < 1.1)
             {
-                GameObject.Find("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.TopDownController>().trapsUsed++;
-                Destroy(gameObject, 0);
-                guard.GetComponent<NavMeshAgent>().isStopped = false;
+                target.GetComponent<NavMeshAgent>().isStopped = true;
+
+                secondsTrappedFor -= Time.deltaTime;
+
+                if (secondsTrappedFor <= 0.0f)
+                {
+                    GameObject.Find("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.TopDownController>().trapsUsed++;
+                    Destroy(gameObject, 0);
+                    target.GetComponent<NavMeshAgent>().isStopped = false;
+                }
             }
-        }
-        else
-        {
-            guard.GetComponent<NavMeshAgent>().isStopped = false;
+            else
+            {
+                target.GetComponent<NavMeshAgent>().isStopped = false;
+            }
         }
     }
 }
