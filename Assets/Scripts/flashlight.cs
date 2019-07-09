@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class flashlight : MonoBehaviour
 {
     private Light lt;
+    private Light lt2;
     AudioSource audioData;
     public AudioClip onSound;
     private double battery = 100;
@@ -14,7 +15,8 @@ public class flashlight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lt = GetComponentInChildren<Light>();
+        lt = GameObject.Find("Spot Light").GetComponent<Light>();
+        lt2 = GameObject.Find("Spot Light 2").GetComponent<Light>();
         AudioSource[] audios = GetComponents<AudioSource>();
         audioData = audios[1];
     }
@@ -25,6 +27,7 @@ public class flashlight : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             lt.enabled = !lt.enabled;
+            lt2.enabled = !lt2.enabled;
             audioData.clip = onSound;
             audioData.Play();
         }
@@ -45,6 +48,7 @@ public class flashlight : MonoBehaviour
             if (battery <= 0)
             {
                 lt.enabled = false;
+                lt2.enabled = false;
             }
             if (battery > 100)
             {
