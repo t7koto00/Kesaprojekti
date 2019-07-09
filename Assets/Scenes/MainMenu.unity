@@ -3967,7 +3967,7 @@ MonoBehaviour:
   Optionsmenu: {fileID: 1015838889}
   Mainmenu: {fileID: 2001718423}
   LevelSelect: {fileID: 1009258711}
-  batterySwitch: {fileID: 0}
+  batterySwitch: {fileID: 1540324847}
 --- !u!114 &2001718426
 MonoBehaviour:
   m_ObjectHideFlags: 0
