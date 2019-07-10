@@ -22,7 +22,10 @@ public class Trap : MonoBehaviour
             float distance = Vector3.Distance(target.transform.position, transform.position);
             if (distance < 1.1)
             {
-                target.GetComponent<NavMeshAgent>().isStopped = true;
+                if (target.GetComponent<NavMeshAgent>() != null)
+                {
+                    target.GetComponent<NavMeshAgent>().isStopped = true;
+                }
 
                 secondsTrappedFor -= Time.deltaTime;
 
@@ -30,12 +33,19 @@ public class Trap : MonoBehaviour
                 {
                     GameObject.Find("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.TopDownController>().trapsUsed++;
                     Destroy(gameObject, 0);
-                    target.GetComponent<NavMeshAgent>().isStopped = false;
+                    if (target.GetComponent<NavMeshAgent>() != null)
+                    {
+                        target.GetComponent<NavMeshAgent>().isStopped = false;
+                    }
                 }
             }
             else
             {
-                target.GetComponent<NavMeshAgent>().isStopped = false;
+                if (target.GetComponent<NavMeshAgent>() != null)
+                {
+                    target.GetComponent<NavMeshAgent>().isStopped = false;
+                }
+                
             }
         }
     }

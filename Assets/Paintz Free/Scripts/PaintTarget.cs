@@ -252,7 +252,7 @@ public class PaintTarget : MonoBehaviour
         newPaint.scaleBias = brush.getTile();
         newPaint.brush = brush;
        
-        if (target.maxScore < 1000)
+        if (target.maxScore < 1000 && (target.tag == "painting" || target.tag == "statue" || target.tag == "guardpaintable"))
         {
             TopDownController.score = TopDownController.score + 10;
             target.maxScore = target.maxScore + 10;
@@ -270,7 +270,7 @@ public class PaintTarget : MonoBehaviour
                 ObjectiveController.statues = ObjectiveController.statues + 1;
                 target.painted = true;
             }
-            if (target.tag == "guard" && target.painted == false)
+            if (target.tag == "guardpaintable" && target.painted == false)
             {
                 ObjectiveController.guards = ObjectiveController.guards + 1;
                 target.painted = true;
