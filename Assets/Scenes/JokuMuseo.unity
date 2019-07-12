@@ -8468,7 +8468,7 @@ PrefabInstance:
     - target: {fileID: 1168373344, guid: 4efdc095f88074e53a4f28617077b108, type: 3}
       propertyPath: trapPrefab
       value: 
-      objectReference: {fileID: 3895686251430274364, guid: 12eafba2476cabc4d93b867bc0395514,
+      objectReference: {fileID: 5568649098496064656, guid: dcf712f805fc05d44ae811ebf57b07a2,
         type: 3}
     - target: {fileID: 1168373351, guid: 4efdc095f88074e53a4f28617077b108, type: 3}
       propertyPath: objectives
@@ -8486,13 +8486,13 @@ PrefabInstance:
       propertyPath: m_Range
       value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 922735082, guid: 4efdc095f88074e53a4f28617077b108, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 652431406, guid: 4efdc095f88074e53a4f28617077b108, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 922735082, guid: 4efdc095f88074e53a4f28617077b108, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4efdc095f88074e53a4f28617077b108, type: 3}
