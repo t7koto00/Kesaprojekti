@@ -15,7 +15,6 @@ public class Patrol : MonoBehaviour
     AudioSource audioSource;
     public AudioClip caught;
     public AudioClip spotted;
-    private static bool playerSpotted = false;
     
     void Start()
     {
@@ -28,7 +27,6 @@ public class Patrol : MonoBehaviour
         float distance = Vector3.Distance(player.position, transform.position);
         if (InFront() && HaveLineOfSight())
         {
-            playerSpotted = true;
             float t = Mathf.PingPong(Time.time, 0.7f) / 0.7f;
             guardLight.color = Color.Lerp(Color.red, Color.blue, t);
             Vector3 pos = Vector3.MoveTowards(transform.position, player.transform.position, 5 * Time.deltaTime);
@@ -56,7 +54,6 @@ public class Patrol : MonoBehaviour
         {
             guardLight.color = Color.white;
             audioSource.Stop();
-            playerSpotted = false;
             if ((transform.position - target[current].position).sqrMagnitude > 1 * 1)
             {
                 agent.SetDestination(target[current].position);
@@ -101,19 +98,7 @@ public class Patrol : MonoBehaviour
     {
         if (col.collider.tag == "Player")
         {
-           //if (playerSpotted == true)
-            //{
                 SceneManager.LoadSceneAsync("GameOver");
-            //}
-            //else
-            //{
-                /*Vector3 pos = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-              
-                Vector3 lookDir = pos - transform.position;
-                lookDir.y = 0;
-
-                transform.LookAt(transform.position + lookDir, Vector3.up);*/
-            //}
         }
     }
 }
