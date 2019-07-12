@@ -252,7 +252,7 @@ public class PaintTarget : MonoBehaviour
         newPaint.scaleBias = brush.getTile();
         newPaint.brush = brush;
        
-        if (target.maxScore < 1000 && (target.tag == "painting" || target.tag == "statue" || target.tag == "guardpaintable"))
+        if (target.maxScore < 1000 && (target.tag == "painting" || target.tag == "statue" || target.tag == "guardpaintable" || target.tag == "haunted"))
         {
             TopDownController.score = TopDownController.score + 10;
             target.maxScore = target.maxScore + 10;
@@ -274,6 +274,10 @@ public class PaintTarget : MonoBehaviour
             {
                 ObjectiveController.guards = ObjectiveController.guards + 1;
                 target.painted = true;
+            }
+            if (target.tag == "haunted" && target.painted == false)
+            {
+                Haunted.isHaunted = true;
             }
 
         }

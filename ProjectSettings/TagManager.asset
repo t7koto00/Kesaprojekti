@@ -11,6 +11,8 @@ TagManager:
   - Mainmenu
   - Optionsmenu
   - guardpaintable
+  - Fire
+  - haunted
   layers:
   - Default
   - TransparentFX
