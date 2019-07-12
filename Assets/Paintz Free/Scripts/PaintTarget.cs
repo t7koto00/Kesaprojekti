@@ -252,7 +252,8 @@ public class PaintTarget : MonoBehaviour
         newPaint.scaleBias = brush.getTile();
         newPaint.brush = brush;
        
-        if (target.maxScore < 1000 && (target.tag == "painting" || target.tag == "statue" || target.tag == "guardpaintable" || target.tag == "haunted"))
+        if (target.maxScore < 1000 && (target.tag == "painting" || target.tag == "statue" || target.tag == "guardpaintable" || target.tag == "haunted"
+            || target.tag == "Crap"))
         {
             TopDownController.score = TopDownController.score + 10;
             target.maxScore = target.maxScore + 10;
@@ -279,7 +280,10 @@ public class PaintTarget : MonoBehaviour
             {
                 Haunted.isHaunted = true;
             }
-
+            if (target.tag == "Crap" && target.painted == false)
+            {
+                Crap.isPainted = true;
+            }
         }
        
         target.PaintSplat(newPaint);
