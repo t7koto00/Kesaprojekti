@@ -15,8 +15,8 @@ public class flashlight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lt = GameObject.Find("Spot Light").GetComponent<Light>();
-        lt2 = GameObject.Find("Spot Light 2").GetComponent<Light>();
+        lt = GameObject.Find("Player/Spot Light").GetComponent<Light>();
+        lt2 = GameObject.Find("Player/Spot Light 2").GetComponent<Light>();
         AudioSource[] audios = GetComponents<AudioSource>();
         audioData = audios[1];
     }
