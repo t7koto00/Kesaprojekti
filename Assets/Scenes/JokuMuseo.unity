@@ -3327,7 +3327,7 @@ HingeJoint:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_Limits:
     min: -90
     max: 90
@@ -7311,7 +7311,7 @@ HingeJoint:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_Limits:
     min: -90
     max: 90
@@ -8395,7 +8395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4832031578413854, guid: 4efdc095f88074e53a4f28617077b108, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.55
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4832031578413854, guid: 4efdc095f88074e53a4f28617077b108, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9083,7 +9083,7 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: 1223128554477810, guid: 8a5e4aaa4b16e474f9860a425e52c985, type: 3}
+    - target: {fileID: 1260703630824800, guid: 8a5e4aaa4b16e474f9860a425e52c985, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -9147,15 +9147,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.7063885
       objectReference: {fileID: 0}
+    - target: {fileID: 1223128554477810, guid: 8a5e4aaa4b16e474f9860a425e52c985, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 23507382362335632, guid: 8a5e4aaa4b16e474f9860a425e52c985,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 51f711fea225bef44840a0e3270b84e6, type: 2}
-    - target: {fileID: 1260703630824800, guid: 8a5e4aaa4b16e474f9860a425e52c985, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a5e4aaa4b16e474f9860a425e52c985, type: 3}
 --- !u!1 &1079748044
@@ -9357,7 +9357,7 @@ HingeJoint:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_Limits:
     min: -90
     max: 90
@@ -13439,7 +13439,7 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: 1223128554477810, guid: 8a5e4aaa4b16e474f9860a425e52c985, type: 3}
+    - target: {fileID: 1260703630824800, guid: 8a5e4aaa4b16e474f9860a425e52c985, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -13503,15 +13503,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.7063885
       objectReference: {fileID: 0}
+    - target: {fileID: 1223128554477810, guid: 8a5e4aaa4b16e474f9860a425e52c985, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 23507382362335632, guid: 8a5e4aaa4b16e474f9860a425e52c985,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 51f711fea225bef44840a0e3270b84e6, type: 2}
-    - target: {fileID: 1260703630824800, guid: 8a5e4aaa4b16e474f9860a425e52c985, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a5e4aaa4b16e474f9860a425e52c985, type: 3}
 --- !u!1 &1498817226
@@ -16395,7 +16395,7 @@ HingeJoint:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_Limits:
     min: -90
     max: 90
