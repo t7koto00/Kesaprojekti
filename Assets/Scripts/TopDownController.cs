@@ -58,6 +58,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             FpsCamera = fpCamera.GetComponentInChildren<Camera>();
             FpsCamera.enabled = false;
             QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = 144;
             m_MouseLook.Init(transform, fpCamera.transform);
             score = 0;
             scoreOutline = GameObject.Find("ScoreSlider/Background").GetComponent<Outline>();
