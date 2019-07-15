@@ -25,7 +25,7 @@ public class Trap : MonoBehaviour
         foreach (GameObject target in guards)
         {
             float distance = Vector3.Distance(target.transform.position, transform.position);
-            if (distance < 1.1)
+            if (distance < 1.4)
             {
                 if (target.GetComponent<NavMeshAgent>() != null)
                 {
