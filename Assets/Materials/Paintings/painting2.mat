@@ -93,5 +93,5 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SplatColor1: {r: 1, g: 0, b: 0.8515253, a: 1}
+    - _SplatColor1: {r: 1, g: 0.48650524, b: 0, a: 1}
     - _SplatColor2: {r: 1, g: 0, b: 0, a: 1}
