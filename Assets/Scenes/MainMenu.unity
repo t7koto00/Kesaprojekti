@@ -1424,7 +1424,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Tero on ea bad
+  m_Text: Museoum Marauder
 --- !u!222 &549479657
 CanvasRenderer:
   m_ObjectHideFlags: 0
