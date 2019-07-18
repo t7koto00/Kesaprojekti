@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     public GameObject Optionsmenu;
     public GameObject Mainmenu;
     public GameObject LevelSelect;
+    public GameObject Helpmenu;
     public GameObject batterySwitch;
 
     void Start()
@@ -48,6 +49,7 @@ public class MainMenu : MonoBehaviour
         Mainmenu.SetActive(true);
         Optionsmenu.SetActive(false);
         LevelSelect.SetActive(false);
+        Helpmenu.SetActive(false);
     }
 
     public void Level1()
@@ -63,6 +65,12 @@ public class MainMenu : MonoBehaviour
     public void Level3()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("JokuMuseo");
+    }
+
+    public void Help()
+    {
+        Mainmenu.SetActive(false);
+        Helpmenu.SetActive(true);
     }
 
 
